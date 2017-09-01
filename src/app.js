@@ -33,9 +33,7 @@ http.listen(3001, function () {
 function execCmd(consoleId, cmd, socket) {
   console.log('exec command', cmd);
 
-  const args = cmd.split(" ");
-  const c = args.shift();
-  const proc = spawn(c, args);
+  const proc = spawn('/bin/sh', ['-c', cmd]);
   proc.stdout.on('data', function (data) {
     socket.emit('action', {
       type: 'socket/stdout',
