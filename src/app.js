@@ -10,7 +10,6 @@ io.attach(http);
 io.on('connection', function (socket) {
   console.log('A user connected');
   socket.on('action', function (action) {
-    console.log('action', action);
     switch (action.type) {
       case 'socket/exec_cmd':
         execCmd(action.consoleId, action.cmd, socket)
@@ -38,14 +37,14 @@ function execCmd(consoleId, cmd, socket) {
     socket.emit('action', {
       type: 'socket/stdout',
       consoleId,
-      data: data.toString(),
+      data,
     });
   });
   proc.stderr.on('data', function (data) {
     socket.emit('action', {
       type: 'socket/stderr',
       consoleId,
-      data: data.toString(),
+      data: data,
     });
   });
 
