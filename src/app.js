@@ -1,7 +1,8 @@
 const http = require('http').createServer();
 const socket = require('socket.io');
 const spawn = require('child_process').spawn;
-
+const config = require('config');
+const fs = require('fs');
 
 const io = socket();
 io.attach(http);
@@ -25,15 +26,29 @@ io.on('connection', function (socket) {
 });
 
 
-http.listen(3001, function () {
-  console.log('listening on *:3001');
+const port = config.get('port')
+http.listen(port, function () {
+  console.log(`listening on *:${port}`);
 });
 
 function execCmd(consoleId, cmd, socket) {
+
   console.log('exec command', cmd);
 
-  const proc = spawn('/bin/sh', ['-c', cmd]);
+  if (cmd === 'ccx_preCICE -i flap -precice-participant Calculix') {
+    fakeOutput(consoleId, 'calculix', socket);
+    return;
+  } else if (cmd === '~/Solvers/SU2_fin/bin/SU2_CFD su2-config.cfg') {
+    fakeOutput(consoleId, 'su2', socket);
+  }
+
+  const proc = spawn('/bin/sh', ['-c', cmd], {cwd: config.get('cwd')});
+
+  proc.stdout.setEncoding('utf8');
+  proc.stderr.setEncoding('utf8');
+
   proc.stdout.on('data', function (data) {
+    console.log('stdout');
     socket.emit('action', {
       type: 'socket/stdout',
       consoleId,
@@ -57,3 +72,42 @@ function execCmd(consoleId, cmd, socket) {
   });
 
 }
+
+
+CMD_DUMPS = {};
+
+function fakeOutput(consoleId, name, socket) {
+
+  if (!CMD_DUMPS[name]) {
+    CMD_DUMPS[name] = fs.readFileSync('./cmd_dumps/' + name + '.txt', {encoding: 'utf-8'}).split('\n');
+  }
+
+  const cmdDump = CMD_DUMPS[name];
+
+  let i = 0;
+  const numLines = cmdDump.length;
+
+  const intval = setInterval(() => {
+
+    socket.emit('action', {
+      type: 'socket/stdout',
+      consoleId,
+      data: cmdDump[i],
+    });
+
+    i++;
+
+    if (i >  numLines - 1
+    ) {
+      clearInterval(intval);
+      socket.emit('action', {
+        type: 'socket/exit',
+        consoleId,
+        code: 0,
+      });
+    }
+  }, 100);
+
+
+}
+

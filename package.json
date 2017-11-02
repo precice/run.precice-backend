@@ -3,6 +3,7 @@
     "start": "node ./src/app.js"
   },
   "dependencies": {
+    "config": "^1.27.0",
     "socket.io": "^2.0.3"
   }
 }
