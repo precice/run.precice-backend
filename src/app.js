@@ -43,6 +43,13 @@ function execCmd(consoleId, cmd, socket) {
     return;
   }
 
+  socket.emit('action', {
+    type: 'socket/exit',
+    consoleId,
+    code: 42,
+  });
+  return; // don't allow any other code right now;
+
   const proc = spawn('/bin/sh', ['-c', cmd], {cwd: config.get('cwd')});
 
   proc.stdout.setEncoding('utf8');
