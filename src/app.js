@@ -40,6 +40,7 @@ function execCmd(consoleId, cmd, socket) {
     return;
   } else if (cmd === '~/Solvers/SU2_fin/bin/SU2_CFD su2-config.cfg') {
     fakeOutput(consoleId, 'su2', socket);
+    return;
   }
 
   const proc = spawn('/bin/sh', ['-c', cmd], {cwd: config.get('cwd')});
@@ -76,10 +77,12 @@ function execCmd(consoleId, cmd, socket) {
 
 CMD_DUMPS = {};
 
+CHUNK_SIZE = 10;
+
 function fakeOutput(consoleId, name, socket) {
 
   if (!CMD_DUMPS[name]) {
-    CMD_DUMPS[name] = fs.readFileSync('./cmd_dumps/' + name + '.txt', {encoding: 'utf-8'}).split('\n');
+    CMD_DUMPS[name] = fs.readFileSync('./cmd_dumps/' + name + '.log', {encoding: 'utf-8'}).split('\n');
   }
 
   const cmdDump = CMD_DUMPS[name];
@@ -89,15 +92,17 @@ function fakeOutput(consoleId, name, socket) {
 
   const intval = setInterval(() => {
 
+    const nexti = Math.min(i+CHUNK_SIZE, numLines -1);
+
     socket.emit('action', {
       type: 'socket/stdout',
       consoleId,
-      data: cmdDump[i],
+      data: cmdDump.slice(i+1, nexti).join('\n'),
     });
 
-    i++;
+    i = nexti;
 
-    if (i >  numLines - 1
+    if (i === numLines - 1
     ) {
       clearInterval(intval);
       socket.emit('action', {
@@ -106,7 +111,7 @@ function fakeOutput(consoleId, name, socket) {
         code: 0,
       });
     }
-  }, 100);
+  }, 200);
 
 
 }
