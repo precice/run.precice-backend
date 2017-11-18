@@ -1,4 +1,9 @@
 {
   "port": 3001,
-  "cwd": null
+  "cwd": null,
+  "whitelist": [
+    "ccx_preCICE -i flap -precice-participant Calculix",
+    "SU2_CFD euler_config_coupled.cfg"
+  ],
+  "fakeOutput": true
 }

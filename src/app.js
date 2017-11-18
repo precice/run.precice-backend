@@ -26,7 +26,7 @@ io.on('connection', function (socket) {
 });
 
 
-const port = config.get('port')
+const port = config.get('port');
 http.listen(port, function () {
   console.log(`listening on *:${port}`);
 });
@@ -35,21 +35,32 @@ function execCmd(consoleId, cmd, socket) {
 
   console.log('exec command', cmd);
 
-  if (cmd === 'ccx_preCICE -i flap -precice-participant Calculix') {
-    fakeOutput(consoleId, 'calculix', socket);
-    return;
-  } else if (cmd === '~/Solvers/SU2_fin/bin/SU2_CFD su2-config.cfg') {
-    fakeOutput(consoleId, 'su2', socket);
-    return;
+
+  if (config.get('fakeOutput')) {
+
+    if (cmd === 'ccx_preCICE -i flap -precice-participant Calculix') {
+      fakeOutput(consoleId, 'calculix', socket);
+      return;
+    } else if (cmd === 'SU2_CFD euler_config_coupled.cfg') {
+      fakeOutput(consoleId, 'su2', socket);
+      return;
+    }
   }
 
-  socket.emit('action', {
-    type: 'socket/exit',
-    consoleId,
-    code: 42,
-  });
-  return; // don't allow any other code right now;
 
+  if (config.whitelist.indexOf(cmd) === -1) {
+    socket.emit('action', {
+      type: 'socket/stderr',
+      consoleId,
+      data: "Perission denied.",
+    });
+    socket.emit('action', {
+      type: 'socket/exit',
+      consoleId,
+      code: 403,
+    });
+    return;
+  }
   const proc = spawn('/bin/sh', ['-c', cmd], {cwd: config.get('cwd')});
 
   proc.stdout.setEncoding('utf8');
@@ -99,12 +110,12 @@ function fakeOutput(consoleId, name, socket) {
 
   const intval = setInterval(() => {
 
-    const nexti = Math.min(i+CHUNK_SIZE, numLines -1);
+    const nexti = Math.min(i + CHUNK_SIZE, numLines - 1);
 
     socket.emit('action', {
       type: 'socket/stdout',
       consoleId,
-      data: cmdDump.slice(i+1, nexti).join('\n'),
+      data: cmdDump.slice(i + 1, nexti).join('\n'),
     });
 
     i = nexti;
