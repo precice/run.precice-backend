@@ -3,6 +3,7 @@ const socket = require('socket.io');
 const spawn = require('child_process').spawn;
 const config = require('config');
 const fs = require('fs');
+const path = require('path');
 
 const io = socket();
 io.attach(http);
@@ -13,7 +14,7 @@ io.on('connection', function (socket) {
   socket.on('action', function (action) {
     switch (action.type) {
       case 'socket/exec_cmd':
-        execCmd(action.consoleId, action.cmd, socket)
+        execCmd(action.consoleId, action.cmd, socket, action.relaxParam)
     }
 
 
@@ -31,7 +32,7 @@ http.listen(port, function () {
   console.log(`listening on *:${port}`);
 });
 
-function execCmd(consoleId, cmd, socket) {
+function execCmd(consoleId, cmd, socket, relaxParam = '0.9') {
 
   console.log('exec command', cmd);
 
@@ -61,7 +62,7 @@ function execCmd(consoleId, cmd, socket) {
     });
     return;
   }
-  const proc = spawn('/bin/sh', ['-c', cmd], {cwd: config.get('cwd')});
+  const proc = spawn('/bin/sh', ['-c', path.join(cmd, 'sim' + relaxParam)], {cwd: config.get('cwd')});
 
   proc.stdout.setEncoding('utf8');
   proc.stderr.setEncoding('utf8');
