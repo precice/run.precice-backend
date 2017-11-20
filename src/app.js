@@ -62,7 +62,7 @@ function execCmd(consoleId, cmd, socket, relaxParam = '0.9') {
     });
     return;
   }
-  const proc = spawn('/bin/sh', ['-c', path.join(cmd, 'sim' + relaxParam)], {cwd: config.get('cwd')});
+  const proc = spawn('/bin/sh', ['-c', cmd], {cwd: path.join(config.get('cwd'), `sim${relaxParam}`)});
 
   proc.stdout.setEncoding('utf8');
   proc.stderr.setEncoding('utf8');
