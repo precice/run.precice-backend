@@ -96,7 +96,7 @@ function execCmd(consoleId, cmd, socket, relaxParam = '0.9') {
 
 CMD_DUMPS = {};
 
-CHUNK_SIZE = 10;
+CHUNK_SIZE = 100;
 
 function fakeOutput(consoleId, name, socket) {
 
