@@ -5,6 +5,14 @@ const config = require('config');
 const fs = require('fs');
 const path = require('path');
 
+
+const { send_output, exit } = require('./communication');
+const { get_dump_obj } = require('./faker-utils');
+const { THRESOLD, CONSOLE_ID_INVERSE, CONSOLE_ID_MAPPING, PARTS } = require('./constants');
+
+
+const DUMPS = get_dump_obj();
+
 const io = socket();
 io.attach(http);
 
@@ -14,7 +22,7 @@ io.on('connection', function (socket) {
   socket.on('action', function (action) {
     switch (action.type) {
       case 'socket/exec_cmd':
-        execCmd(action.consoleId, action.cmd, socket, action.relaxParam)
+        execCmd(socket, action.consoleId, action.partNumber)
     }
 
 
@@ -22,6 +30,7 @@ io.on('connection', function (socket) {
   //Whenever someone disconnects this piece of code executed
   socket.on('disconnect', function () {
     console.log('A user disconnected');
+    resetSocket(socket);
   });
 
 });
@@ -32,65 +41,71 @@ http.listen(port, function () {
   console.log(`listening on *:${port}`);
 });
 
-function execCmd(consoleId, cmd, socket, relaxParam = '0.9') {
+function execCmd(socket, consoleId, partNumber) {
 
-  console.log('exec command', cmd);
+  const storyCase = PARTS[partNumber];
 
+  const cmd = CONSOLE_ID_MAPPING[consoleId];
 
-  if (config.get('fakeOutput')) {
-
-    if (cmd === 'ccx_preCICE -i flap -precice-participant Calculix') {
-      fakeOutput(consoleId, 'calculix', socket);
-      return;
-    } else if (cmd === 'SU2_CFD euler_config_coupled.cfg') {
-      fakeOutput(consoleId, 'su2', socket);
-      return;
-    }
-  }
-
-
-  if (config.whitelist.indexOf(cmd) === -1) {
-    socket.emit('action', {
-      type: 'socket/stderr',
-      consoleId,
-      data: "Perission denied.",
-    });
-    socket.emit('action', {
-      type: 'socket/exit',
-      consoleId,
-      code: 403,
-    });
+  if (socket[cmd + 'Running']) {
     return;
   }
-  const proc = spawn('/bin/sh', ['-c', cmd], {cwd: path.join(config.get('cwd'), `sim${relaxParam}`)});
+  socket[cmd + 'Running'] = true;
 
-  proc.stdout.setEncoding('utf8');
-  proc.stderr.setEncoding('utf8');
+  // doBefore(socket, consoleId, '01explConvergence');
+  doBefore(socket, consoleId, storyCase);
 
-  proc.stdout.on('data', function (data) {
-    console.log('stdout');
-    socket.emit('action', {
-      type: 'socket/stdout',
-      consoleId,
-      data,
-    });
-  });
-  proc.stderr.on('data', function (data) {
-    socket.emit('action', {
-      type: 'socket/stderr',
-      consoleId,
-      data: data,
-    });
-  });
 
-  proc.on('exit', function (code) {
-    socket.emit('action', {
-      type: 'socket/exit',
-      consoleId,
-      code,
-    });
-  });
+}
 
+function doBefore(socket, consoleId, storyCase) {
+  const cmd = CONSOLE_ID_MAPPING[consoleId];
+  const parsedDump = DUMPS[storyCase][cmd]['before'];
+  let counter = 0;
+  const dump_length = parsedDump.length;
+  socket[cmd + 'Pulse'] = setInterval(() => {
+    send_output(socket, consoleId, parsedDump[counter]);
+    counter++;
+    if (counter >= dump_length) {
+      clearInterval(socket[cmd + 'Pulse']);
+      socket[cmd + 'Pulse'] = null;
+      socket[cmd + 'Loaded'] = true;
+      if (socket['su2Loaded'] && socket['ccxLoaded']) {
+        doAfter(socket, storyCase);
+      }
+    }
+  }, THRESOLD);
+}
+
+function doAfter(socket, storyCase) {
+  const parsedDumpSu2 = DUMPS[storyCase]['su2']['after'];
+  const parsedDumpCcx = DUMPS[storyCase]['ccx']['after'];
+  let counter = 0;
+  const dump_length = Math.max(parsedDumpSu2.length, parsedDumpCcx.length);
+  socket['afterPulse'] = setInterval(() => {
+
+    if (parsedDumpSu2[counter] && parsedDumpCcx[counter]) {
+      send_output(socket, [CONSOLE_ID_INVERSE['su2'], CONSOLE_ID_INVERSE['ccx']], [parsedDumpSu2[counter], parsedDumpCcx[counter]]);
+
+    } else if (parsedDumpSu2[counter]) {
+      send_output(socket, CONSOLE_ID_INVERSE['su2'], parsedDumpSu2[counter]);
+    }
+    else if (parsedDumpCcx[counter]) {
+      send_output(socket, CONSOLE_ID_INVERSE['ccx'], parsedDumpCcx[counter]);
+    }
+    counter++;
+    if (counter === parsedDumpSu2.length) {
+      exit(socket, CONSOLE_ID_INVERSE['su2']);
+    }
+    if (counter === parsedDumpCcx.length) {
+      exit(socket, CONSOLE_ID_INVERSE['ccx']);
+    }
+
+    if (counter >= dump_length) {
+      clearInterval(socket['afterPulse']);
+      resetSocket(socket);
+    }
+  }, THRESOLD);
 }
 
 
@@ -98,40 +113,16 @@ CMD_DUMPS = {};
 
 CHUNK_SIZE = 100;
 
-function fakeOutput(consoleId, name, socket) {
 
-  if (!CMD_DUMPS[name]) {
-    CMD_DUMPS[name] = fs.readFileSync('./cmd_dumps/' + name + '.log', {encoding: 'utf-8'}).split('\n');
-  }
-
-  const cmdDump = CMD_DUMPS[name];
-
-  let i = 0;
-  const numLines = cmdDump.length;
-
-  const intval = setInterval(() => {
-
-    const nexti = Math.min(i + CHUNK_SIZE, numLines - 1);
-
-    socket.emit('action', {
-      type: 'socket/stdout',
-      consoleId,
-      data: cmdDump.slice(i + 1, nexti).join('\n'),
-    });
-
-    i = nexti;
-
-    if (i === numLines - 1
-    ) {
-      clearInterval(intval);
-      socket.emit('action', {
-        type: 'socket/exit',
-        consoleId,
-        code: 0,
-      });
+function resetSocket(socket) {
+  ['ccxPulse', 'su2Pulse', 'afterPulse'].forEach((prop) => {
+    if (socket[prop]) {
+      clearInterval(socket[prop]);
+      socket[prop] = null;
     }
-  }, 200);
-
-
+  });
+  socket.ccxLoaded = false;
+  socket.su2Loaded = false;
+  socket.ccxRunning = false;
+  socket.su2Running = false;
 }
-
