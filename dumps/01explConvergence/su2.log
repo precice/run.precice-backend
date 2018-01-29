@@ -1,0 +1,1773 @@
+@@TIMESTAMP 0
+
+@@TIMESTAMP 0
+-------------------------------------------------------------------------
+@@TIMESTAMP 0
+|    ___ _   _ ___                                                      |
+@@TIMESTAMP 0
+|   / __| | | |_  )   Release 4.0.2  "Cardinal"                         |
+@@TIMESTAMP 0
+|   \__ \ |_| |/ /                                                      |
+@@TIMESTAMP 0
+|   |___/\___//___|   Suite (Computational Fluid Dynamics Code)         |
+@@TIMESTAMP 0
+|                                                                       |
+@@TIMESTAMP 0
+|   Local date and time: Mon Jan 29 00:08:45 2018.                      |
+@@TIMESTAMP 0
+-------------------------------------------------------------------------
+@@TIMESTAMP 0
+| SU2 Lead Dev.: Dr. Francisco Palacios, Francisco.D.Palacios@boeing.com|
+@@TIMESTAMP 0
+|                Dr. Thomas D. Economon, economon@stanford.edu          |
+@@TIMESTAMP 1
+-------------------------------------------------------------------------
+@@TIMESTAMP 1
+| SU2 Developers:                                                       |
+@@TIMESTAMP 1
+| - Prof. Juan J. Alonso's group at Stanford University.                |
+@@TIMESTAMP 1
+| - Prof. Piero Colonna's group at Delft University of Technology.      |
+@@TIMESTAMP 1
+| - Prof. Nicolas R. Gauger's group at Kaiserslautern U. of Technology. |
+@@TIMESTAMP 1
+| - Prof. Alberto Guardone's group at Polytechnic University of Milan.  |
+@@TIMESTAMP 1
+| - Prof. Rafael Palacios' group at Imperial College London.            |
+@@TIMESTAMP 1
+-------------------------------------------------------------------------
+@@TIMESTAMP 1
+| Copyright (C) 2012-2015 SU2, the open-source CFD code.                |
+@@TIMESTAMP 1
+|                                                                       |
+@@TIMESTAMP 2
+| SU2 is free software; you can redistribute it and/or                  |
+@@TIMESTAMP 2
+| modify it under the terms of the GNU Lesser General Public            |
+@@TIMESTAMP 2
+| License as published by the Free Software Foundation; either          |
+@@TIMESTAMP 2
+| version 2.1 of the License, or (at your option) any later version.    |
+@@TIMESTAMP 2
+|                                                                       |
+@@TIMESTAMP 2
+| SU2 is distributed in the hope that it will be useful,                |
+@@TIMESTAMP 2
+| but WITHOUT ANY WARRANTY; without even the implied warranty of        |
+@@TIMESTAMP 2
+| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      |
+@@TIMESTAMP 2
+| Lesser General Public License for more details.                       |
+@@TIMESTAMP 2
+|                                                                       |
+@@TIMESTAMP 3
+| You should have received a copy of the GNU Lesser General Public      |
+@@TIMESTAMP 3
+| License along with SU2. If not, see <http://www.gnu.org/licenses/>.   |
+@@TIMESTAMP 3
+-------------------------------------------------------------------------
+@@TIMESTAMP 3
+
+@@TIMESTAMP 3
+------------------------ Physical Case Definition -----------------------
+@@TIMESTAMP 3
+Compressible Euler equations.
+@@TIMESTAMP 3
+Mach number: 1.00000000000000002082e-02.
+@@TIMESTAMP 3
+Angle of attack (AoA): 0.00000000000000000000e+00 deg, and angle of sideslip (AoS): 0.00000000000000000000e+00 deg.
+@@TIMESTAMP 3
+Performing a dynamic mesh simulation: Read flow solution from: initial_flow.dat.
+@@TIMESTAMP 3
+Dimensional simulation.
+@@TIMESTAMP 3
+The reference length/area (force coefficient) is 1.00000000000000000000e+00.
+@@TIMESTAMP 3
+The reference length (moment computation) is 1.00000000000000000000e+00.
+@@TIMESTAMP 3
+Reference origin (moment computation) is (2.35287103882651813246e-316, 2.35141809057522819462e-316, 2.34941969385092952060e-316).
+@@TIMESTAMP 3
+Surface(s) where the force coefficients are evaluated: Surface(s) plotted in the output file: 
+@@TIMESTAMP 3
+Surface(s) belonging to the Fluid-Structure Interaction problem: 
+@@TIMESTAMP 3
+Input mesh file name: fluidMesh.su2
+@@TIMESTAMP 3
+
+@@TIMESTAMP 4
+---------------------- Space Numerical Integration ----------------------
+@@TIMESTAMP 4
+Jameson-Schmidt-Turkel scheme for the flow inviscid terms.
+@@TIMESTAMP 4
+JST viscous coefficients (1st, 2nd & 4th): 1.49999999999999994449e-01, 5.00000000000000000000e-01, 2.00000000000000004163e-02.
+@@TIMESTAMP 4
+The method includes a grid stretching correction (p = 0.3).
+@@TIMESTAMP 4
+Second order integration.
+@@TIMESTAMP 4
+Gradient computation using Green-Gauss theorem.
+@@TIMESTAMP 4
+
+@@TIMESTAMP 5
+---------------------- Time Numerical Integration -----------------------
+@@TIMESTAMP 5
+Unsteady simulation, dual time stepping strategy (first order in time).
+@@TIMESTAMP 5
+Unsteady time step provided by the user (s): 1.00000000000000002082e-02.
+@@TIMESTAMP 5
+Total number of internal Dual Time iterations: 200.
+@@TIMESTAMP 5
+Euler implicit method for the flow equations.
+@@TIMESTAMP 5
+V Multigrid Cycle, with 3 multigrid levels.
+@@TIMESTAMP 5
+Damping factor for the residual restriction: 9.00000000000000022204e-01.
+@@TIMESTAMP 5
+Damping factor for the correction prolongation: 9.00000000000000022204e-01.
+@@TIMESTAMP 5
+CFL adaptation. Factor down: 1.50000000000000000000e+00, factor up: 5.00000000000000000000e-01,
+                lower limit: 1.00000000000000000000e+00, upper limit: 1.00000000000000000000e+02.
+@@TIMESTAMP 5
+Multigrid Level:                       0     1     2     3
+@@TIMESTAMP 5
+Courant-Friedrichs-Lewy number:   2.000e+00
+@@TIMESTAMP 5
+MG PreSmooth coefficients:             1     2     3     3
+@@TIMESTAMP 6
+MG PostSmooth coefficients:            0     0     0     0
+@@TIMESTAMP 6
+MG CorrecSmooth coefficients:          0     0     0     0
+@@TIMESTAMP 6
+
+@@TIMESTAMP 6
+------------------------- Convergence Criteria --------------------------
+@@TIMESTAMP 6
+Maximum number of iterations: 999999.
+@@TIMESTAMP 6
+Reduce the density residual 1.000e+00 orders of magnitude.
+@@TIMESTAMP 6
+The minimum bound for the density residual is 10^(-3.500e+00).
+@@TIMESTAMP 6
+Start convergence criteria at iteration 10.
+@@TIMESTAMP 6
+
+@@TIMESTAMP 6
+-------------------------- Output Information ---------------------------
+@@TIMESTAMP 6
+Writing a flow solution every 1 iterations.
+@@TIMESTAMP 6
+Writing the convergence history every 1 iterations.
+@@TIMESTAMP 6
+Writing the dual time flow solution every 1 iterations.
+@@TIMESTAMP 6
+Writing the dual time convergence history every 1 iterations.
+@@TIMESTAMP 7
+The output file format is Paraview ASCII (.vtk).
+@@TIMESTAMP 7
+Convergence history file name: history.
+@@TIMESTAMP 7
+Forces breakdown file name: forces_breakdown.dat.
+@@TIMESTAMP 7
+Surface flow coefficients file name: surface_flow.
+@@TIMESTAMP 7
+Flow variables file name: flow.
+@@TIMESTAMP 7
+Restart flow file name: restart_flow.dat.
+@@TIMESTAMP 8
+
+------------------- Config File Boundary Information --------------------
+Euler wall boundary marker(s): upper_wall, lower_wall, wetSurface0.
+Symmetry plane boundary marker(s): symmetry.
+Inlet boundary marker(s): inlet.
+Outlet boundary marker(s): outlet.
+
+---------------------- Read Grid File Information -----------------------
+@@TIMESTAMP 10
+Three dimensional problem.
+286 points.
+@@TIMESTAMP 18
+6 surface markers.
+4 boundary elements in index 0 (Marker = inlet).
+4 boundary elements in index 1 (Marker = outlet).
+12 boundary elements in index 2 (Marker = lower_wall).
+6 boundary elements in index 3 (Marker = upper_wall).
+11 boundary elements in index 4 (Marker = wetSurface0).
+494 boundary elements in index 5 (Marker = symmetry).
+247 prisms.
+@@TIMESTAMP 20
+
+@@TIMESTAMP 21
+------------------------- Geometry Preprocessing ------------------------
+@@TIMESTAMP 21
+Setting point connectivity.
+@@TIMESTAMP 22
+Renumbering points (Reverse Cuthill McKee Ordering).
+@@TIMESTAMP 22
+Recomputing point connectivity.
+@@TIMESTAMP 22
+Setting element connectivity.
+@@TIMESTAMP 27
+Checking the numerical grid orientation.
+@@TIMESTAMP 28
+Identifying edges and vertices.
+@@TIMESTAMP 29
+Computing centers of gravity.
+@@TIMESTAMP 30
+Setting the control volume structure.
+@@TIMESTAMP 31
+Volume of the computational grid: 7.170e+00.
+@@TIMESTAMP 32
+Searching for the closest normal neighbors to the surfaces.
+@@TIMESTAMP 32
+Compute the surface curvature.
+@@TIMESTAMP 33
+Max K: 5.471e+01. Mean K: 1.120e+01. Standard deviation K: 1.655e+01.
+@@TIMESTAMP 33
+Setting the multigrid structure.
+@@TIMESTAMP 34
+Computing wall distances.
+@@TIMESTAMP 35
+Area projection in the z-plane = 0.000e+00.
+@@TIMESTAMP 35
+
+@@TIMESTAMP 36
+------------------------- Driver Preprocessing --------------------------
+@@TIMESTAMP 36
+Instantiating a single zone driver for the problem. 
+@@TIMESTAMP 36
+
+@@TIMESTAMP 36
+------------------------ Iteration Preprocessing ------------------------
+@@TIMESTAMP 36
+Zone 1: Euler/Navier-Stokes/RANS flow iteration.
+@@TIMESTAMP 36
+
+@@TIMESTAMP 36
+------------------------- Solver Preprocessing --------------------------
+@@TIMESTAMP 36
+Inviscid flow: Computing density based on free-stream
+@@TIMESTAMP 36
+temperature and pressure using the ideal gas law.
+@@TIMESTAMP 36
+Force coefficients computed using MACH_MOTION.
+@@TIMESTAMP 36
+-- Input conditions:
+@@TIMESTAMP 36
+Fluid Model: STANDARD_AIR 
+@@TIMESTAMP 36
+Specific gas constant: 2.870580e+02 N.m/kg.K.
+@@TIMESTAMP 36
+Specific gas constant (non-dim): 2.870580e+02
+@@TIMESTAMP 36
+Specific Heat Ratio: 1.400000e+00
+@@TIMESTAMP 36
+Free-stream static pressure: 1.013000e+05 Pa.
+@@TIMESTAMP 36
+Free-stream total pressure: 1.013071e+05 Pa.
+@@TIMESTAMP 37
+Free-stream temperature: 2.880000e+02 K.
+@@TIMESTAMP 37
+Free-stream density: 1.225314e+00 kg/m^3.
+@@TIMESTAMP 37
+Free-stream velocity: (3.402084e+00, 0.000000e+00, 0.000000e+00) m/s. Magnitude: 3.402084e+00 m/s.
+@@TIMESTAMP 37
+Free-stream total energy per unit mass: 2.066875e+05 m^2/s^2.
+@@TIMESTAMP 37
+Total time: 6.000000e+00 s. Time step: 1.000000e-02 s.
+@@TIMESTAMP 37
+-- Reference values:
+@@TIMESTAMP 37
+Reference specific gas constant: 1.000000e+00 N.m/kg.K.
+@@TIMESTAMP 38
+Reference pressure: 1.000000e+00 Pa.
+@@TIMESTAMP 38
+Reference temperature: 1.000000e+00 K.
+@@TIMESTAMP 38
+Reference density: 1.000000e+00 kg/m^3.
+@@TIMESTAMP 38
+Reference velocity: 1.000000e+00 m/s.
+@@TIMESTAMP 38
+Reference energy per unit mass: 1.000000e+00 m^2/s^2.
+@@TIMESTAMP 38
+Reference time: 1.000000e+00 s.
+@@TIMESTAMP 38
+-- Resulting non-dimensional state:
+@@TIMESTAMP 38
+Mach number (non-dim): 1.000000e-02
+@@TIMESTAMP 38
+Specific gas constant (non-dim): 2.870580e+02
+@@TIMESTAMP 38
+Free-stream temperature (non-dim): 2.880000e+02
+@@TIMESTAMP 38
+Free-stream pressure (non-dim): 1.013000e+05
+@@TIMESTAMP 38
+Free-stream density (non-dim): 1.225314e+00
+@@TIMESTAMP 38
+Free-stream velocity (non-dim): (3.402084e+00, 0.000000e+00, 0.000000e+00). Magnitude: 3.402084e+00
+@@TIMESTAMP 38
+Free-stream total energy per unit mass (non-dim): 2.066875e+05
+@@TIMESTAMP 38
+Total time (non-dim): 6.000000e+00
+@@TIMESTAMP 38
+Time step (non-dim): 1.000000e-02
+@@TIMESTAMP 39
+
+@@TIMESTAMP 39
+Initialize Jacobian structure (Euler). MG level: 0.
+@@TIMESTAMP 44
+
+@@TIMESTAMP 44
+----------------- Integration and Numerics Preprocessing ----------------
+@@TIMESTAMP 44
+Integration Preprocessing.
+@@TIMESTAMP 44
+Numerics Preprocessing.
+@@TIMESTAMP 44
+Setting dynamic mesh structure.
+@@TIMESTAMP 136
+[2018-01-29 00:08:45.112694] [0x00007f2020e46840] [trace]   Entering configure
+  Argument 0: configurationFileName == ./precice-config.xml
+(0) 00:08:45 [impl::SolverInterfaceImpl]:176 in configure: [PRECICE] Run in coupling mode
+@@TIMESTAMP 137
+(0) 00:08:45 [impl::SolverInterfaceImpl]:250 in initialize: Setting up master communication to coupling partner/s 
+@@TIMESTAMP 141
+(0) 00:08:45 [impl::SolverInterfaceImpl]:267 in initialize: Coupling partner/s are connected 
+@@TIMESTAMP 141
+(0) 00:08:45 [precice::geometry::CommunicatedGeometry]:141 in receiveMesh: Receive global mesh Calculix_Mesh
+@@TIMESTAMP 143
+(0) 00:08:45 [impl::SolverInterfaceImpl]:306 in initialize: Setting up slaves communication to coupling partner/s 
+@@TIMESTAMP 143
+(0) 00:08:45 [impl::SolverInterfaceImpl]:322 in initialize: Slaves are connected
+@@TIMESTAMP 143
+(0) 00:08:45 [impl::SolverInterfaceImpl]:360 in initialize: it 1 of 1 | dt# 1 of 20 | t 0 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete no | 
+@@TIMESTAMP 144
+
+@@TIMESTAMP 144
+------------------------------ Begin Solver -----------------------------
+@@TIMESTAMP 144
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 150
+CSysSolve::FGMRES(): system solved by initial guess.
+@@TIMESTAMP 151
+Non-linear iter.: 1/1. Linear iter.: 0. Min. volume: 1.135255e-03. Error: 0.000000e+00.
+@@TIMESTAMP 151
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 153
+
+@@TIMESTAMP 154
+Min DT: 1.048766e-04.Max DT: 3.130413e-04.Dual Time step: 1.000000e-02.
+@@TIMESTAMP 154
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 154
+log10[Maximum residual]: -3.301319e+00.
+@@TIMESTAMP 154
+Maximum residual point 63, located at (3.000000e+00, 3.000000e-01, 1.000000e+00).
+@@TIMESTAMP 154
+-------------------------------------------------------------------------
+@@TIMESTAMP 154
+
+@@TIMESTAMP 154
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 154
+       0       1    -4.048923      1.517429       0.000000       0.000000
+@@TIMESTAMP 156
+       1       1    -4.039302      1.602770       0.000000       0.000000
+@@TIMESTAMP 159
+       2       1    -3.986884      1.673841       0.000000       0.000000
+@@TIMESTAMP 161
+       3       1    -3.920285      1.732754       0.000000       0.000000
+@@TIMESTAMP 164
+       4       1    -3.855670      1.781911       0.000000       0.000000
+@@TIMESTAMP 166
+       5       1    -3.798240      1.823262       0.000000       0.000000
+@@TIMESTAMP 168
+       6       1    -3.748682      1.858285       0.000000       0.000000
+@@TIMESTAMP 170
+       7       1    -3.706285      1.888105       0.000000       0.000000
+@@TIMESTAMP 173
+       8       1    -3.670077      1.913573       0.000000       0.000000
+@@TIMESTAMP 175
+       9       1    -3.639144      1.935345       0.000000       0.000000
+@@TIMESTAMP 177
+      10       1    -3.612712      1.953936       0.000000       0.000000
+@@TIMESTAMP 177
+(0) 00:08:45 [impl::SolverInterfaceImpl]:2008 in mapWrittenData: Compute write mapping from mesh "SU2_Mesh0" to mesh "Calculix_Mesh".
+@@TIMESTAMP 189
+(0) 00:08:45 [impl::SolverInterfaceImpl]:2067 in mapReadData: Compute read mapping from mesh "Calculix_Mesh" to mesh "SU2_Mesh0".
+@@TIMESTAMP 191
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 2 of 20 | t 0.01 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 195
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 198
+Writing the forces breakdown file.
+@@TIMESTAMP 198
+-------------------------------------------------------------------------
+@@TIMESTAMP 198
+
+@@TIMESTAMP 198
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 207
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00114081. Error: 4.20646e-08.
+@@TIMESTAMP 207
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 209
+
+@@TIMESTAMP 209
+Min DT: 0.000104981.Max DT: 0.000313039.Dual Time step: 0.01.
+@@TIMESTAMP 209
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 209
+log10[Maximum residual]: -3.09627.
+@@TIMESTAMP 210
+Maximum residual point 11, located at (0.0504204, 0.3, 0.999914).
+@@TIMESTAMP 210
+-------------------------------------------------------------------------
+@@TIMESTAMP 210
+
+@@TIMESTAMP 210
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 210
+       0       2    -3.504930      2.064245       0.000000       0.000000
+@@TIMESTAMP 212
+       1       2    -3.483288      2.079242       0.000000       0.000000
+@@TIMESTAMP 214
+       2       2    -3.464622      2.092180       0.000000       0.000000
+@@TIMESTAMP 216
+       3       2    -3.448394      2.103337       0.000000       0.000000
+@@TIMESTAMP 218
+       4       2    -3.434321      2.112859       0.000000       0.000000
+@@TIMESTAMP 220
+       5       2    -3.422268      2.120813       0.000000       0.000000
+@@TIMESTAMP 222
+       6       2    -3.412165      2.127236       0.000000       0.000000
+@@TIMESTAMP 225
+       7       2    -3.403953      2.132162       0.000000       0.000000
+@@TIMESTAMP 228
+       8       2    -3.397555      2.135644       0.000000       0.000000
+@@TIMESTAMP 230
+       9       2    -3.392873      2.137747       0.000000       0.000000
+@@TIMESTAMP 232
+      10       2    -3.389794      2.138551       0.000000       0.000000
+@@TIMESTAMP 234
+      11       2    -3.388202      2.138140       0.000000       0.000000
+@@TIMESTAMP 236
+      12       2    -3.387984      2.136592       0.000000       0.000000
+@@TIMESTAMP 238
+      13       2    -3.389043      2.133978       0.000000       0.000000
+@@TIMESTAMP 240
+      14       2    -3.391294      2.130355       0.000000       0.000000
+@@TIMESTAMP 242
+      15       2    -3.394672      2.125770       0.000000       0.000000
+@@TIMESTAMP 244
+      16       2    -3.399124      2.120260       0.000000       0.000000
+@@TIMESTAMP 246
+      17       2    -3.404611      2.113852       0.000000       0.000000
+@@TIMESTAMP 248
+      18       2    -3.411100      2.106570       0.000000       0.000000
+@@TIMESTAMP 250
+      19       2    -3.418565      2.098430       0.000000       0.000000
+@@TIMESTAMP 252
+      20       2    -3.426985      2.089448       0.000000       0.000000
+@@TIMESTAMP 254
+      21       2    -3.436342      2.079636       0.000000       0.000000
+@@TIMESTAMP 256
+      22       2    -3.446624      2.069002       0.000000       0.000000
+@@TIMESTAMP 258
+      23       2    -3.457820      2.057553       0.000000       0.000000
+@@TIMESTAMP 261
+      24       2    -3.469926      2.045291       0.000000       0.000000
+@@TIMESTAMP 263
+      25       2    -3.482940      2.032216       0.000000       0.000000
+@@TIMESTAMP 265
+      26       2    -3.496867      2.018324       0.000000       0.000000
+@@TIMESTAMP 267
+      27       2    -3.511714      2.003607       0.000000       0.000000
+@@TIMESTAMP 277
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 3 of 20 | t 0.02 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 278
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 282
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 285
+Writing the forces breakdown file.
+@@TIMESTAMP 285
+-------------------------------------------------------------------------
+@@TIMESTAMP 285
+
+@@TIMESTAMP 285
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 295
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00115183. Error: 1.42125e-07.
+@@TIMESTAMP 295
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 297
+
+@@TIMESTAMP 297
+Min DT: 0.000105188.Max DT: 0.000313041.Dual Time step: 0.01.
+@@TIMESTAMP 297
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 297
+log10[Maximum residual]: -2.82679.
+@@TIMESTAMP 297
+Maximum residual point 122, located at (-0.137624, 0, 3.1817).
+@@TIMESTAMP 297
+-------------------------------------------------------------------------
+@@TIMESTAMP 297
+
+@@TIMESTAMP 297
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 298
+       0       3    -3.215604      2.303862       0.000000       0.000000
+@@TIMESTAMP 300
+       1       3    -3.229282      2.290008       0.000000       0.000000
+@@TIMESTAMP 302
+       2       3    -3.244284      2.275366       0.000000       0.000000
+@@TIMESTAMP 304
+       3       3    -3.259904      2.260359       0.000000       0.000000
+@@TIMESTAMP 306
+       4       3    -3.275731      2.245187       0.000000       0.000000
+@@TIMESTAMP 308
+       5       3    -3.291673      2.229821       0.000000       0.000000
+@@TIMESTAMP 310
+       6       3    -3.307896      2.214075       0.000000       0.000000
+@@TIMESTAMP 312
+       7       3    -3.324699      2.197691       0.000000       0.000000
+@@TIMESTAMP 314
+       8       3    -3.342400      2.180428       0.000000       0.000000
+@@TIMESTAMP 316
+       9       3    -3.361253      2.162110       0.000000       0.000000
+@@TIMESTAMP 318
+      10       3    -3.381408      2.142644       0.000000       0.000000
+@@TIMESTAMP 320
+      11       3    -3.402914      2.122013       0.000000       0.000000
+@@TIMESTAMP 322
+      12       3    -3.425756      2.100246       0.000000       0.000000
+@@TIMESTAMP 324
+      13       3    -3.449882      2.077389       0.000000       0.000000
+@@TIMESTAMP 326
+      14       3    -3.475247      2.053477       0.000000       0.000000
+@@TIMESTAMP 328
+      15       3    -3.501833      2.028521       0.000000       0.000000
+@@TIMESTAMP 338
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 4 of 20 | t 0.03 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 342
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 345
+Writing the forces breakdown file.
+@@TIMESTAMP 345
+-------------------------------------------------------------------------
+@@TIMESTAMP 346
+
+@@TIMESTAMP 346
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 355
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00115812. Error: 2.35295e-07.
+@@TIMESTAMP 355
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 357
+
+@@TIMESTAMP 357
+Min DT: 0.000105313.Max DT: 0.000313055.Dual Time step: 0.01.
+@@TIMESTAMP 357
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 357
+log10[Maximum residual]: -2.62948.
+@@TIMESTAMP 357
+Maximum residual point 3, located at (-0.048481, 0, 1.00055).
+@@TIMESTAMP 357
+-------------------------------------------------------------------------
+@@TIMESTAMP 357
+
+@@TIMESTAMP 357
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 357
+       0       4    -3.263088      2.258330       0.000000       0.000000
+@@TIMESTAMP 359
+       1       4    -3.294778      2.228365       0.000000       0.000000
+@@TIMESTAMP 361
+       2       4    -3.330670      2.195715       0.000000       0.000000
+@@TIMESTAMP 363
+       3       4    -3.368874      2.161769       0.000000       0.000000
+@@TIMESTAMP 365
+       4       4    -3.407558      2.127702       0.000000       0.000000
+@@TIMESTAMP 367
+       5       4    -3.445495      2.094115       0.000000       0.000000
+@@TIMESTAMP 369
+       6       4    -3.482423      2.060897       0.000000       0.000000
+@@TIMESTAMP 371
+       7       4    -3.519009      2.027361       0.000000       0.000000
+@@TIMESTAMP 374
+       8       4    -3.556471      1.992548       0.000000       0.000000
+@@TIMESTAMP 376
+       9       4    -3.596086      1.955539       0.000000       0.000000
+@@TIMESTAMP 378
+      10       4    -3.638821      1.915653       0.000000       0.000000
+@@TIMESTAMP 388
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 5 of 20 | t 0.04 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 391
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 395
+Writing the forces breakdown file.
+@@TIMESTAMP 395
+-------------------------------------------------------------------------
+@@TIMESTAMP 395
+
+@@TIMESTAMP 395
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 404
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00116288. Error: 2.80044e-07.
+@@TIMESTAMP 404
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 406
+
+@@TIMESTAMP 406
+Min DT: 0.000105406.Max DT: 0.000313074.Dual Time step: 0.01.
+@@TIMESTAMP 406
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 406
+log10[Maximum residual]: -2.83686.
+@@TIMESTAMP 406
+Maximum residual point 3, located at (-0.0470368, 0, 1.00121).
+@@TIMESTAMP 406
+-------------------------------------------------------------------------
+@@TIMESTAMP 406
+
+@@TIMESTAMP 406
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 406
+       0       5    -3.463335      2.083519       0.000000       0.000000
+@@TIMESTAMP 408
+       1       5    -3.518194      2.034614       0.000000       0.000000
+@@TIMESTAMP 411
+       2       5    -3.580563      1.980735       0.000000       0.000000
+@@TIMESTAMP 413
+       3       5    -3.648515      1.923069       0.000000       0.000000
+@@TIMESTAMP 415
+       4       5    -3.718699      1.863049       0.000000       0.000000
+@@TIMESTAMP 417
+       5       5    -3.786546      1.801889       0.000000       0.000000
+@@TIMESTAMP 420
+       6       5    -3.847085      1.740127       0.000000       0.000000
+@@TIMESTAMP 422
+       7       5    -3.896194      1.677473       0.000000       0.000000
+@@TIMESTAMP 424
+       8       5    -3.931379      1.613203       0.000000       0.000000
+@@TIMESTAMP 426
+       9       5    -3.951500      1.547171       0.000000       0.000000
+@@TIMESTAMP 429
+      10       5    -3.956347      1.481449       0.000000       0.000000
+@@TIMESTAMP 440
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 6 of 20 | t 0.05 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 445
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 448
+Writing the forces breakdown file.
+@@TIMESTAMP 448
+-------------------------------------------------------------------------
+@@TIMESTAMP 448
+
+@@TIMESTAMP 449
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 460
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00117134. Error: 3.14623e-07.
+@@TIMESTAMP 466
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 468
+
+@@TIMESTAMP 468
+Min DT: 0.000105559.Max DT: 0.000313095.Dual Time step: 0.01.
+@@TIMESTAMP 469
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 469
+log10[Maximum residual]: -2.83205.
+@@TIMESTAMP 469
+Maximum residual point 3, located at (-0.0455548, 0, 1.00187).
+@@TIMESTAMP 469
+-------------------------------------------------------------------------
+@@TIMESTAMP 469
+
+@@TIMESTAMP 469
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 469
+       0       6    -3.746023      1.760688       0.000000       0.000000
+@@TIMESTAMP 471
+       1       6    -3.799281      1.666129       0.000000       0.000000
+@@TIMESTAMP 473
+       2       6    -3.846887      1.548590       0.000000       0.000000
+@@TIMESTAMP 476
+       3       6    -3.867949      1.419709       0.000000       0.000000
+@@TIMESTAMP 478
+       4       6    -3.851330      1.335329       0.000000       0.000000
+@@TIMESTAMP 480
+       5       6    -3.808641      1.361272       0.000000       0.000000
+@@TIMESTAMP 483
+       6       6    -3.758584      1.447780       0.000000       0.000000
+@@TIMESTAMP 485
+       7       6    -3.712147      1.532342       0.000000       0.000000
+@@TIMESTAMP 487
+       8       6    -3.672872      1.600201       0.000000       0.000000
+@@TIMESTAMP 489
+       9       6    -3.640750      1.653031       0.000000       0.000000
+@@TIMESTAMP 491
+      10       6    -3.614599      1.694777       0.000000       0.000000
+@@TIMESTAMP 502
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 7 of 20 | t 0.06 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 505
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 509
+Writing the forces breakdown file.
+@@TIMESTAMP 509
+-------------------------------------------------------------------------
+@@TIMESTAMP 509
+
+@@TIMESTAMP 509
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 518
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00117764. Error: 4.01881e-07.
+@@TIMESTAMP 518
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 520
+
+@@TIMESTAMP 520
+Min DT: 0.000105676.Max DT: 0.000313122.Dual Time step: 0.01.
+@@TIMESTAMP 520
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 520
+log10[Maximum residual]: -2.55327.
+@@TIMESTAMP 520
+Maximum residual point 3, located at (-0.0435337, 0, 1.00254).
+@@TIMESTAMP 520
+-------------------------------------------------------------------------
+@@TIMESTAMP 520
+
+@@TIMESTAMP 520
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 520
+       0       7    -3.443442      1.935289       0.000000       0.000000
+@@TIMESTAMP 522
+       1       7    -3.454190      1.905207       0.000000       0.000000
+@@TIMESTAMP 524
+       2       7    -3.464439      1.879291       0.000000       0.000000
+@@TIMESTAMP 526
+       3       7    -3.468217      1.867693       0.000000       0.000000
+@@TIMESTAMP 528
+       4       7    -3.463194      1.874220       0.000000       0.000000
+@@TIMESTAMP 530
+       5       7    -3.451136      1.894039       0.000000       0.000000
+@@TIMESTAMP 533
+       6       7    -3.435850      1.918919       0.000000       0.000000
+@@TIMESTAMP 535
+       7       7    -3.420800      1.942657       0.000000       0.000000
+@@TIMESTAMP 537
+       8       7    -3.408057      1.962319       0.000000       0.000000
+@@TIMESTAMP 539
+       9       7    -3.398372      1.977277       0.000000       0.000000
+@@TIMESTAMP 541
+      10       7    -3.391643      1.988059       0.000000       0.000000
+@@TIMESTAMP 543
+      11       7    -3.387379      1.995582       0.000000       0.000000
+@@TIMESTAMP 545
+      12       7    -3.385022      2.000720       0.000000       0.000000
+@@TIMESTAMP 547
+      13       7    -3.384127      2.004101       0.000000       0.000000
+@@TIMESTAMP 549
+      14       7    -3.384422      2.006076       0.000000       0.000000
+@@TIMESTAMP 551
+      15       7    -3.385798      2.006772       0.000000       0.000000
+@@TIMESTAMP 553
+      16       7    -3.388239      2.006192       0.000000       0.000000
+@@TIMESTAMP 555
+      17       7    -3.391769      2.004303       0.000000       0.000000
+@@TIMESTAMP 557
+      18       7    -3.396406      2.001082       0.000000       0.000000
+@@TIMESTAMP 559
+      19       7    -3.402146      1.996543       0.000000       0.000000
+@@TIMESTAMP 561
+      20       7    -3.408961      1.990728       0.000000       0.000000
+@@TIMESTAMP 563
+      21       7    -3.416811      1.983690       0.000000       0.000000
+@@TIMESTAMP 565
+      22       7    -3.425655      1.975485       0.000000       0.000000
+@@TIMESTAMP 567
+      23       7    -3.435459      1.966157       0.000000       0.000000
+@@TIMESTAMP 569
+      24       7    -3.446196      1.955741       0.000000       0.000000
+@@TIMESTAMP 571
+      25       7    -3.457845      1.944263       0.000000       0.000000
+@@TIMESTAMP 573
+      26       7    -3.470388      1.931748       0.000000       0.000000
+@@TIMESTAMP 575
+      27       7    -3.483808      1.918217       0.000000       0.000000
+@@TIMESTAMP 577
+      28       7    -3.498086      1.903694       0.000000       0.000000
+@@TIMESTAMP 579
+      29       7    -3.513208      1.888196       0.000000       0.000000
+@@TIMESTAMP 589
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 8 of 20 | t 0.07 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 593
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 596
+Writing the forces breakdown file.
+@@TIMESTAMP 596
+-------------------------------------------------------------------------
+@@TIMESTAMP 596
+
+@@TIMESTAMP 596
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 605
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00118328. Error: 5.49349e-07.
+@@TIMESTAMP 606
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 608
+
+@@TIMESTAMP 608
+Min DT: 0.000105782.Max DT: 0.00031316.Dual Time step: 0.01.
+@@TIMESTAMP 608
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 608
+log10[Maximum residual]: -2.37793.
+@@TIMESTAMP 608
+Maximum residual point 3, located at (-0.0406712, 0, 1.00351).
+@@TIMESTAMP 608
+-------------------------------------------------------------------------
+@@TIMESTAMP 608
+
+@@TIMESTAMP 608
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 608
+       0       8    -3.165775      2.248034       0.000000       0.000000
+@@TIMESTAMP 610
+       1       8    -3.191447      2.214763       0.000000       0.000000
+@@TIMESTAMP 612
+       2       8    -3.219926      2.179393       0.000000       0.000000
+@@TIMESTAMP 614
+       3       8    -3.246474      2.147754       0.000000       0.000000
+@@TIMESTAMP 616
+       4       8    -3.267604      2.124181       0.000000       0.000000
+@@TIMESTAMP 618
+       5       8    -3.282356      2.109502       0.000000       0.000000
+@@TIMESTAMP 620
+       6       8    -3.292255      2.101151       0.000000       0.000000
+@@TIMESTAMP 622
+       7       8    -3.299975      2.095269       0.000000       0.000000
+@@TIMESTAMP 624
+       8       8    -3.307915      2.088710       0.000000       0.000000
+@@TIMESTAMP 626
+       9       8    -3.317517      2.079782       0.000000       0.000000
+@@TIMESTAMP 628
+      10       8    -3.329254      2.068076       0.000000       0.000000
+@@TIMESTAMP 630
+      11       8    -3.342933      2.053985       0.000000       0.000000
+@@TIMESTAMP 632
+      12       8    -3.358054      2.038223       0.000000       0.000000
+@@TIMESTAMP 634
+      13       8    -3.374104      2.021470       0.000000       0.000000
+@@TIMESTAMP 636
+      14       8    -3.390740      2.004154       0.000000       0.000000
+@@TIMESTAMP 638
+      15       8    -3.407849      1.986400       0.000000       0.000000
+@@TIMESTAMP 640
+      16       8    -3.425504      1.968086       0.000000       0.000000
+@@TIMESTAMP 642
+      17       8    -3.443886      1.948959       0.000000       0.000000
+@@TIMESTAMP 644
+      18       8    -3.463195      1.928750       0.000000       0.000000
+@@TIMESTAMP 647
+      19       8    -3.483605      1.907226       0.000000       0.000000
+@@TIMESTAMP 649
+      20       8    -3.505242      1.884210       0.000000       0.000000
+@@TIMESTAMP 658
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 9 of 20 | t 0.08 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+@@TIMESTAMP 659
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 662
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 666
+Writing the forces breakdown file.
+@@TIMESTAMP 666
+-------------------------------------------------------------------------
+@@TIMESTAMP 666
+
+@@TIMESTAMP 666
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 675
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00119083. Error: 7.22049e-07.
+@@TIMESTAMP 675
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 677
+
+@@TIMESTAMP 677
+Min DT: 0.000105921.Max DT: 0.000313202.Dual Time step: 0.01.
+@@TIMESTAMP 677
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 677
+log10[Maximum residual]: -2.30361.
+@@TIMESTAMP 677
+Maximum residual point 10, located at (-0.036968, 0.3, 1.00475).
+@@TIMESTAMP 677
+-------------------------------------------------------------------------
+@@TIMESTAMP 677
+
+@@TIMESTAMP 677
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 677
+       0       9    -3.155677      2.269807       0.000000       0.000000
+@@TIMESTAMP 679
+       1       9    -3.199423      2.215443       0.000000       0.000000
+@@TIMESTAMP 681
+       2       9    -3.252993      2.149804       0.000000       0.000000
+@@TIMESTAMP 683
+       3       9    -3.308756      2.081555       0.000000       0.000000
+@@TIMESTAMP 685
+       4       9    -3.357588      2.022714       0.000000       0.000000
+@@TIMESTAMP 687
+       5       9    -3.392783      1.983108       0.000000       0.000000
+@@TIMESTAMP 689
+       6       9    -3.414294      1.962626       0.000000       0.000000
+@@TIMESTAMP 691
+       7       9    -3.427894      1.952257       0.000000       0.000000
+@@TIMESTAMP 694
+       8       9    -3.440342      1.942331       0.000000       0.000000
+@@TIMESTAMP 696
+       9       9    -3.456099      1.927181       0.000000       0.000000
+@@TIMESTAMP 698
+      10       9    -3.476943      1.904942       0.000000       0.000000
+@@TIMESTAMP 700
+      11       9    -3.502777      1.876067       0.000000       0.000000
+@@TIMESTAMP 710
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 10 of 20 | t 0.09 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 714
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 717
+Writing the forces breakdown file.
+@@TIMESTAMP 717
+-------------------------------------------------------------------------
+@@TIMESTAMP 717
+
+@@TIMESTAMP 717
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 726
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00119611. Error: 8.72004e-07.
+@@TIMESTAMP 726
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 728
+
+@@TIMESTAMP 728
+Min DT: 0.000106016.Max DT: 0.000313248.Dual Time step: 0.01.
+@@TIMESTAMP 728
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 728
+log10[Maximum residual]: -2.36185.
+@@TIMESTAMP 728
+Maximum residual point 3, located at (-0.0324831, 0, 1.00606).
+@@TIMESTAMP 728
+-------------------------------------------------------------------------
+@@TIMESTAMP 729
+
+@@TIMESTAMP 729
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 729
+       0      10    -3.252347      2.177189       0.000000       0.000000
+@@TIMESTAMP 731
+       1      10    -3.309521      2.105567       0.000000       0.000000
+@@TIMESTAMP 733
+       2      10    -3.386286      2.009057       0.000000       0.000000
+@@TIMESTAMP 735
+       3      10    -3.476190      1.891081       0.000000       0.000000
+@@TIMESTAMP 737
+       4      10    -3.563899      1.769031       0.000000       0.000000
+@@TIMESTAMP 739
+       5      10    -3.625539      1.686799       0.000000       0.000000
+@@TIMESTAMP 741
+       6      10    -3.648295      1.675749       0.000000       0.000000
+@@TIMESTAMP 743
+       7      10    -3.646347      1.701732       0.000000       0.000000
+@@TIMESTAMP 745
+       8      10    -3.641356      1.724200       0.000000       0.000000
+@@TIMESTAMP 747
+       9      10    -3.645108      1.729497       0.000000       0.000000
+@@TIMESTAMP 749
+      10      10    -3.660504      1.717547       0.000000       0.000000
+@@TIMESTAMP 759
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 11 of 20 | t 0.1 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+@@TIMESTAMP 760
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 763
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 766
+Writing the forces breakdown file.
+@@TIMESTAMP 766
+-------------------------------------------------------------------------
+@@TIMESTAMP 766
+
+@@TIMESTAMP 767
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 776
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00119638. Error: 9.83066e-07.
+@@TIMESTAMP 776
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 778
+
+@@TIMESTAMP 778
+Min DT: 0.000106097.Max DT: 0.000313296.Dual Time step: 0.01.
+@@TIMESTAMP 778
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 778
+log10[Maximum residual]: -2.42265.
+@@TIMESTAMP 778
+Maximum residual point 3, located at (-0.0275124, 0, 1.00742).
+@@TIMESTAMP 778
+-------------------------------------------------------------------------
+@@TIMESTAMP 778
+
+@@TIMESTAMP 778
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 778
+       0      11    -3.336313      2.115034       0.000000       0.000000
+@@TIMESTAMP 780
+       1      11    -3.411732      2.028517       0.000000       0.000000
+@@TIMESTAMP 782
+       2      11    -3.523252      1.902639       0.000000       0.000000
+@@TIMESTAMP 784
+       3      11    -3.675651      1.727249       0.000000       0.000000
+@@TIMESTAMP 786
+       4      11    -3.860952      1.504441       0.000000       0.000000
+@@TIMESTAMP 789
+       5      11    -3.983880      1.388405       0.000000       0.000000
+@@TIMESTAMP 791
+       6      11    -3.932169      1.502992       0.000000       0.000000
+@@TIMESTAMP 793
+       7      11    -3.839780      1.616719       0.000000       0.000000
+@@TIMESTAMP 795
+       8      11    -3.779849      1.681837       0.000000       0.000000
+@@TIMESTAMP 797
+       9      11    -3.752737      1.711210       0.000000       0.000000
+@@TIMESTAMP 799
+      10      11    -3.749415      1.717439       0.000000       0.000000
+@@TIMESTAMP 809
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 12 of 20 | t 0.11 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 813
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 816
+Writing the forces breakdown file.
+@@TIMESTAMP 816
+-------------------------------------------------------------------------
+@@TIMESTAMP 816
+
+@@TIMESTAMP 817
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 825
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.001187. Error: 1.10594e-06.
+@@TIMESTAMP 825
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 827
+
+@@TIMESTAMP 828
+Min DT: 0.000106207.Max DT: 0.000313348.Dual Time step: 0.01.
+@@TIMESTAMP 828
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 828
+log10[Maximum residual]: -2.3992.
+@@TIMESTAMP 828
+Maximum residual point 3, located at (-0.0220271, 0, 1.00891).
+@@TIMESTAMP 828
+-------------------------------------------------------------------------
+@@TIMESTAMP 828
+
+@@TIMESTAMP 828
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 828
+       0      12    -3.331263      2.151060       0.000000       0.000000
+@@TIMESTAMP 830
+       1      12    -3.404238      2.076024       0.000000       0.000000
+@@TIMESTAMP 832
+       2      12    -3.515062      1.972078       0.000000       0.000000
+@@TIMESTAMP 834
+       3      12    -3.666825      1.846950       0.000000       0.000000
+@@TIMESTAMP 836
+       4      12    -3.842407      1.735225       0.000000       0.000000
+@@TIMESTAMP 838
+       5      12    -3.928831      1.700388       0.000000       0.000000
+@@TIMESTAMP 841
+       6      12    -3.858663      1.738820       0.000000       0.000000
+@@TIMESTAMP 843
+       7      12    -3.768738      1.789417       0.000000       0.000000
+@@TIMESTAMP 845
+       8      12    -3.711099      1.824206       0.000000       0.000000
+@@TIMESTAMP 847
+       9      12    -3.683321      1.840486       0.000000       0.000000
+@@TIMESTAMP 849
+      10      12    -3.676582      1.842585       0.000000       0.000000
+@@TIMESTAMP 858
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 13 of 20 | t 0.12 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 859
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 863
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 866
+Writing the forces breakdown file.
+@@TIMESTAMP 866
+-------------------------------------------------------------------------
+@@TIMESTAMP 866
+
+@@TIMESTAMP 866
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 875
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00117563. Error: 1.28499e-06.
+@@TIMESTAMP 875
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 877
+
+@@TIMESTAMP 877
+Min DT: 0.000106298.Max DT: 0.000313409.Dual Time step: 0.01.
+@@TIMESTAMP 878
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 878
+log10[Maximum residual]: -2.28626.
+@@TIMESTAMP 878
+Maximum residual point 3, located at (-0.0155552, 0, 1.0106).
+@@TIMESTAMP 878
+-------------------------------------------------------------------------
+@@TIMESTAMP 878
+
+@@TIMESTAMP 878
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 878
+       0      13    -3.217719      2.270418       0.000000       0.000000
+@@TIMESTAMP 880
+       1      13    -3.281807      2.205067       0.000000       0.000000
+@@TIMESTAMP 882
+       2      13    -3.373399      2.120068       0.000000       0.000000
+@@TIMESTAMP 884
+       3      13    -3.485590      2.026532       0.000000       0.000000
+@@TIMESTAMP 886
+       4      13    -3.593640      1.949086       0.000000       0.000000
+@@TIMESTAMP 888
+       5      13    -3.648714      1.915368       0.000000       0.000000
+@@TIMESTAMP 890
+       6      13    -3.635487      1.922668       0.000000       0.000000
+@@TIMESTAMP 892
+       7      13    -3.597511      1.943771       0.000000       0.000000
+@@TIMESTAMP 894
+       8      13    -3.567714      1.959565       0.000000       0.000000
+@@TIMESTAMP 896
+       9      13    -3.554279      1.964213       0.000000       0.000000
+@@TIMESTAMP 898
+      10      13    -3.555424      1.958569       0.000000       0.000000
+@@TIMESTAMP 908
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 14 of 20 | t 0.13 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 912
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 915
+Writing the forces breakdown file.
+@@TIMESTAMP 915
+-------------------------------------------------------------------------
+@@TIMESTAMP 915
+
+@@TIMESTAMP 916
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 924
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00116292. Error: 1.51531e-06.
+@@TIMESTAMP 924
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 927
+
+@@TIMESTAMP 927
+Min DT: 0.000106392.Max DT: 0.000313481.Dual Time step: 0.01.
+@@TIMESTAMP 927
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 927
+log10[Maximum residual]: -2.23954.
+@@TIMESTAMP 927
+Maximum residual point 3, located at (-0.00789951, 0, 1.01251).
+@@TIMESTAMP 927
+-------------------------------------------------------------------------
+@@TIMESTAMP 927
+
+@@TIMESTAMP 927
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 927
+       0      14    -3.124664      2.360761       0.000000       0.000000
+@@TIMESTAMP 929
+       1      14    -3.187216      2.296210       0.000000       0.000000
+@@TIMESTAMP 931
+       2      14    -3.274867      2.212999       0.000000       0.000000
+@@TIMESTAMP 933
+       3      14    -3.380188      2.121407       0.000000       0.000000
+@@TIMESTAMP 935
+       4      14    -3.480960      2.043220       0.000000       0.000000
+@@TIMESTAMP 937
+       5      14    -3.537962      2.003207       0.000000       0.000000
+@@TIMESTAMP 939
+       6      14    -3.537415      2.001370       0.000000       0.000000
+@@TIMESTAMP 941
+       7      14    -3.511930      2.014464       0.000000       0.000000
+@@TIMESTAMP 943
+       8      14    -3.490976      2.023848       0.000000       0.000000
+@@TIMESTAMP 945
+       9      14    -3.484151      2.022774       0.000000       0.000000
+@@TIMESTAMP 947
+      10      14    -3.491113      2.011334       0.000000       0.000000
+@@TIMESTAMP 949
+      11      14    -3.508068      1.992500       0.000000       0.000000
+@@TIMESTAMP 959
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 15 of 20 | t 0.14 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 960
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 963
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 966
+Writing the forces breakdown file.
+@@TIMESTAMP 967
+-------------------------------------------------------------------------
+@@TIMESTAMP 967
+
+@@TIMESTAMP 967
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 976
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00114991. Error: 1.73422e-06.
+@@TIMESTAMP 976
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 978
+
+@@TIMESTAMP 978
+Min DT: 0.000106508.Max DT: 0.00031356.Dual Time step: 0.01.
+@@TIMESTAMP 978
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 978
+log10[Maximum residual]: -2.23068.
+@@TIMESTAMP 978
+Maximum residual point 3, located at (0.000777806, 0, 1.0146).
+@@TIMESTAMP 978
+-------------------------------------------------------------------------
+@@TIMESTAMP 978
+
+@@TIMESTAMP 978
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 978
+       0      15    -3.075209      2.408168       0.000000       0.000000
+@@TIMESTAMP 980
+       1      15    -3.134674      2.345216       0.000000       0.000000
+@@TIMESTAMP 982
+       2      15    -3.223054      2.258909       0.000000       0.000000
+@@TIMESTAMP 984
+       3      15    -3.335600      2.156979       0.000000       0.000000
+@@TIMESTAMP 987
+       4      15    -3.453915      2.060184       0.000000       0.000000
+@@TIMESTAMP 989
+       5      15    -3.532841      2.001890       0.000000       0.000000
+@@TIMESTAMP 991
+       6      15    -3.540347      1.993430       0.000000       0.000000
+@@TIMESTAMP 993
+       7      15    -3.511279      2.008027       0.000000       0.000000
+@@TIMESTAMP 995
+       8      15    -3.486283      2.019393       0.000000       0.000000
+@@TIMESTAMP 997
+       9      15    -3.478659      2.017678       0.000000       0.000000
+@@TIMESTAMP 999
+      10      15    -3.488261      2.002500       0.000000       0.000000
+@@TIMESTAMP 1001
+      11      15    -3.510719      1.977278       0.000000       0.000000
+@@TIMESTAMP 1011
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 16 of 20 | t 0.15 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+@@TIMESTAMP 1012
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1015
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1018
+Writing the forces breakdown file.
+@@TIMESTAMP 1018
+-------------------------------------------------------------------------
+@@TIMESTAMP 1018
+
+@@TIMESTAMP 1018
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 1027
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.0011363. Error: 1.90561e-06.
+@@TIMESTAMP 1027
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 1029
+
+@@TIMESTAMP 1029
+Min DT: 0.000106608.Max DT: 0.000313645.Dual Time step: 0.01.
+@@TIMESTAMP 1030
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 1030
+log10[Maximum residual]: -2.2395.
+@@TIMESTAMP 1030
+Maximum residual point 3, located at (0.0102792, 0, 1.01679).
+@@TIMESTAMP 1030
+-------------------------------------------------------------------------
+@@TIMESTAMP 1030
+
+@@TIMESTAMP 1030
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 1030
+       0      16    -3.076222      2.405686       0.000000       0.000000
+@@TIMESTAMP 1032
+       1      16    -3.138773      2.338819       0.000000       0.000000
+@@TIMESTAMP 1034
+       2      16    -3.235498      2.242886       0.000000       0.000000
+@@TIMESTAMP 1036
+       3      16    -3.366200      2.121838       0.000000       0.000000
+@@TIMESTAMP 1038
+       4      16    -3.518397      1.994872       0.000000       0.000000
+@@TIMESTAMP 1040
+       5      16    -3.630606      1.912491       0.000000       0.000000
+@@TIMESTAMP 1042
+       6      16    -3.628904      1.908163       0.000000       0.000000
+@@TIMESTAMP 1044
+       7      16    -3.573487      1.938974       0.000000       0.000000
+@@TIMESTAMP 1046
+       8      16    -3.531584      1.961952       0.000000       0.000000
+@@TIMESTAMP 1048
+       9      16    -3.516297      1.965075       0.000000       0.000000
+@@TIMESTAMP 1050
+      10      16    -3.523900      1.949557       0.000000       0.000000
+@@TIMESTAMP 1060
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 17 of 20 | t 0.16 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1061
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1064
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1067
+Writing the forces breakdown file.
+@@TIMESTAMP 1068
+-------------------------------------------------------------------------
+@@TIMESTAMP 1068
+
+@@TIMESTAMP 1068
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 1077
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00112289. Error: 2.07266e-06.
+@@TIMESTAMP 1077
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 1079
+
+@@TIMESTAMP 1079
+Min DT: 0.000106718.Max DT: 0.000313736.Dual Time step: 0.01.
+@@TIMESTAMP 1079
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 1079
+log10[Maximum residual]: -2.24389.
+@@TIMESTAMP 1079
+Maximum residual point 24, located at (-0.0460911, 0, 0.808906).
+@@TIMESTAMP 1079
+-------------------------------------------------------------------------
+@@TIMESTAMP 1079
+
+@@TIMESTAMP 1079
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 1079
+       0      17    -3.098934      2.380480       0.000000       0.000000
+@@TIMESTAMP 1081
+       1      17    -3.172376      2.301979       0.000000       0.000000
+@@TIMESTAMP 1083
+       2      17    -3.286362      2.187284       0.000000       0.000000
+@@TIMESTAMP 1085
+       3      17    -3.449569      2.032261       0.000000       0.000000
+@@TIMESTAMP 1087
+       4      17    -3.666896      1.847349       0.000000       0.000000
+@@TIMESTAMP 1089
+       5      17    -3.832820      1.728080       0.000000       0.000000
+@@TIMESTAMP 1092
+       6      17    -3.749437      1.772575       0.000000       0.000000
+@@TIMESTAMP 1094
+       7      17    -3.630301      1.853709       0.000000       0.000000
+@@TIMESTAMP 1096
+       8      17    -3.561220      1.903433       0.000000       0.000000
+@@TIMESTAMP 1098
+       9      17    -3.531989      1.920946       0.000000       0.000000
+@@TIMESTAMP 1100
+      10      17    -3.529120      1.915170       0.000000       0.000000
+@@TIMESTAMP 1110
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 18 of 20 | t 0.17 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1114
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1117
+Writing the forces breakdown file.
+@@TIMESTAMP 1117
+-------------------------------------------------------------------------
+@@TIMESTAMP 1117
+
+@@TIMESTAMP 1117
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 1126
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00110956. Error: 2.29542e-06.
+@@TIMESTAMP 1126
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 1128
+
+@@TIMESTAMP 1128
+Min DT: 0.000106856.Max DT: 0.000313833.Dual Time step: 0.01.
+@@TIMESTAMP 1128
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 1128
+log10[Maximum residual]: -2.21088.
+@@TIMESTAMP 1128
+Maximum residual point 24, located at (-0.0443485, 0, 0.81043).
+@@TIMESTAMP 1128
+-------------------------------------------------------------------------
+@@TIMESTAMP 1129
+
+@@TIMESTAMP 1129
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 1129
+       0      18    -3.079572      2.393871       0.000000       0.000000
+@@TIMESTAMP 1131
+       1      18    -3.154939      2.310257       0.000000       0.000000
+@@TIMESTAMP 1133
+       2      18    -3.275138      2.182794       0.000000       0.000000
+@@TIMESTAMP 1135
+       3      18    -3.454534      1.995060       0.000000       0.000000
+@@TIMESTAMP 1137
+       4      18    -3.717269      1.715573       0.000000       0.000000
+@@TIMESTAMP 1139
+       5      18    -3.918609      1.488026       0.000000       0.000000
+@@TIMESTAMP 1141
+       6      18    -3.741355      1.687723       0.000000       0.000000
+@@TIMESTAMP 1143
+       7      18    -3.589967      1.842890       0.000000       0.000000
+@@TIMESTAMP 1145
+       8      18    -3.509890      1.920651       0.000000       0.000000
+@@TIMESTAMP 1147
+       9      18    -3.473523      1.953011       0.000000       0.000000
+@@TIMESTAMP 1149
+      10      18    -3.463565      1.958381       0.000000       0.000000
+@@TIMESTAMP 1151
+      11      18    -3.468380      1.949061       0.000000       0.000000
+@@TIMESTAMP 1153
+      12      18    -3.479280      1.934392       0.000000       0.000000
+@@TIMESTAMP 1155
+      13      18    -3.490326      1.920758       0.000000       0.000000
+@@TIMESTAMP 1157
+      14      18    -3.498861      1.910770       0.000000       0.000000
+@@TIMESTAMP 1159
+      15      18    -3.505143      1.903673       0.000000       0.000000
+@@TIMESTAMP 1169
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 19 of 20 | t 0.18 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1173
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1176
+Writing the forces breakdown file.
+@@TIMESTAMP 1176
+-------------------------------------------------------------------------
+@@TIMESTAMP 1176
+
+@@TIMESTAMP 1176
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 1185
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00109565. Error: 2.57581e-06.
+@@TIMESTAMP 1185
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 1187
+
+@@TIMESTAMP 1187
+Min DT: 0.000107005.Max DT: 0.00031394.Dual Time step: 0.01.
+@@TIMESTAMP 1187
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 1187
+log10[Maximum residual]: -2.05904.
+@@TIMESTAMP 1188
+Maximum residual point 53, located at (-0.0423072, 0.3, 0.81212).
+@@TIMESTAMP 1188
+-------------------------------------------------------------------------
+@@TIMESTAMP 1188
+
+@@TIMESTAMP 1188
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 1188
+       0      19    -2.943864      2.520374       0.000000       0.000000
+@@TIMESTAMP 1190
+       1      19    -3.005453      2.449596       0.000000       0.000000
+@@TIMESTAMP 1192
+       2      19    -3.104585      2.341160       0.000000       0.000000
+@@TIMESTAMP 1194
+       3      19    -3.239325      2.194682       0.000000       0.000000
+@@TIMESTAMP 1196
+       4      19    -3.391263      2.027116       0.000000       0.000000
+@@TIMESTAMP 1198
+       5      19    -3.485267      1.925852       0.000000       0.000000
+@@TIMESTAMP 1200
+       6      19    -3.463076      1.958507       0.000000       0.000000
+@@TIMESTAMP 1202
+       7      19    -3.403651      2.024593       0.000000       0.000000
+@@TIMESTAMP 1204
+       8      19    -3.362784      2.065991       0.000000       0.000000
+@@TIMESTAMP 1206
+       9      19    -3.347067      2.079452       0.000000       0.000000
+@@TIMESTAMP 1208
+      10      19    -3.350583      2.072636       0.000000       0.000000
+@@TIMESTAMP 1210
+      11      19    -3.365491      2.054406       0.000000       0.000000
+@@TIMESTAMP 1212
+      12      19    -3.384363      2.032953       0.000000       0.000000
+@@TIMESTAMP 1214
+      13      19    -3.401779      2.014056       0.000000       0.000000
+@@TIMESTAMP 1216
+      14      19    -3.415631      1.999578       0.000000       0.000000
+@@TIMESTAMP 1218
+      15      19    -3.426874      1.987937       0.000000       0.000000
+@@TIMESTAMP 1220
+      16      19    -3.437760      1.976344       0.000000       0.000000
+@@TIMESTAMP 1222
+      17      19    -3.450077      1.962817       0.000000       0.000000
+@@TIMESTAMP 1224
+      18      19    -3.464382      1.946927       0.000000       0.000000
+@@TIMESTAMP 1226
+      19      19    -3.480136      1.929510       0.000000       0.000000
+@@TIMESTAMP 1228
+      20      19    -3.496298      1.911919       0.000000       0.000000
+@@TIMESTAMP 1230
+      21      19    -3.512000      1.895212       0.000000       0.000000
+@@TIMESTAMP 1241
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 20 of 20 | t 0.19 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1244
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1247
+Writing the forces breakdown file.
+@@TIMESTAMP 1248
+-------------------------------------------------------------------------
+@@TIMESTAMP 1248
+
+@@TIMESTAMP 1248
+ Deforming the volume grid due to preCICE simulation.
+@@TIMESTAMP 1257
+Non-linear iter.: 1/1. Linear iter.: 12. Min. volume: 0.00108224. Error: 2.86407e-06.
+@@TIMESTAMP 1257
+ Computing grid velocities by finite differencing due to preCICE simulation.
+@@TIMESTAMP 1259
+
+@@TIMESTAMP 1259
+Min DT: 0.000107186.Max DT: 0.000314052.Dual Time step: 0.01.
+@@TIMESTAMP 1259
+----------------------- Residual Evolution Summary ----------------------
+@@TIMESTAMP 1259
+log10[Maximum residual]: -1.99308.
+@@TIMESTAMP 1259
+Maximum residual point 53, located at (-0.0398336, 0.3, 0.814002).
+@@TIMESTAMP 1259
+-------------------------------------------------------------------------
+@@TIMESTAMP 1259
+
+@@TIMESTAMP 1259
+ IntIter ExtIter     Res[Rho]     Res[RhoE]   CLift(Total)   CDrag(Total)
+@@TIMESTAMP 1260
+       0      20    -2.874149      2.585574       0.000000       0.000000
+@@TIMESTAMP 1262
+       1      20    -2.941222      2.510870       0.000000       0.000000
+@@TIMESTAMP 1264
+       2      20    -3.039003      2.405603       0.000000       0.000000
+@@TIMESTAMP 1266
+       3      20    -3.159233      2.277693       0.000000       0.000000
+@@TIMESTAMP 1268
+       4      20    -3.274806      2.156612       0.000000       0.000000
+@@TIMESTAMP 1270
+       5      20    -3.334420      2.098750       0.000000       0.000000
+@@TIMESTAMP 1272
+       6      20    -3.326192      2.111907       0.000000       0.000000
+@@TIMESTAMP 1274
+       7      20    -3.296542      2.143292       0.000000       0.000000
+@@TIMESTAMP 1276
+       8      20    -3.276790      2.162179       0.000000       0.000000
+@@TIMESTAMP 1278
+       9      20    -3.273245      2.163865       0.000000       0.000000
+@@TIMESTAMP 1280
+      10      20    -3.282714      2.152472       0.000000       0.000000
+@@TIMESTAMP 1282
+      11      20    -3.299593      2.134112       0.000000       0.000000
+@@TIMESTAMP 1284
+      12      20    -3.318607      2.114243       0.000000       0.000000
+@@TIMESTAMP 1286
+      13      20    -3.336448      2.096013       0.000000       0.000000
+@@TIMESTAMP 1288
+      14      20    -3.352406      2.079754       0.000000       0.000000
+@@TIMESTAMP 1290
+      15      20    -3.367620      2.063987       0.000000       0.000000
+@@TIMESTAMP 1292
+      16      20    -3.383630      2.047048       0.000000       0.000000
+@@TIMESTAMP 1294
+      17      20    -3.401265      2.028203       0.000000       0.000000
+@@TIMESTAMP 1296
+      18      20    -3.420326      2.007876       0.000000       0.000000
+@@TIMESTAMP 1298
+      19      20    -3.439881      1.987249       0.000000       0.000000
+@@TIMESTAMP 1300
+      20      20    -3.458876      1.967543       0.000000       0.000000
+@@TIMESTAMP 1302
+      21      20    -3.476732      1.949354       0.000000       0.000000
+@@TIMESTAMP 1304
+      22      20    -3.493636      1.932362       0.000000       0.000000
+@@TIMESTAMP 1306
+      23      20    -3.510414      1.915536       0.000000       0.000000
+@@TIMESTAMP 1317
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 21 of 20 | t 0.2 | dt 0.01 | max dt 0.01 | ongoing no | dt complete yes | 
+
+-------------------------- File Output Summary --------------------------
+Writing comma-separated values (CSV) surface files.
+Merging connectivities in the Master node.
+Merging coordinates in the Master node.
+Merging solution in the Master node.
+Writing SU2 native restart file.
+@@TIMESTAMP 1321
+Writing Paraview ASCII volume solution file.
+@@TIMESTAMP 1325
+Writing the forces breakdown file.
+@@TIMESTAMP 1325
+-------------------------------------------------------------------------
+@@TIMESTAMP 1325
+
+@@TIMESTAMP 1325
+History file, closed.
+@@TIMESTAMP 1325
+
+Completed in 1.181363 seconds on 1 core.
+@@TIMESTAMP 1325
+Process #0/0: Finalizing preCICE...
+@@TIMESTAMP 1329
+(0) 00:08:46 [precice::com::SocketCommunication]:725 in receive: Receive failed: read: Connection reset by peer
+@@TIMESTAMP 1329
+Run finished at Mon Jan 29 00:08:46 2018
+Global runtime       = 1283ms / 1s
+@@TIMESTAMP 1329
+Number of processors = 1
+@@TIMESTAMP 1329
+
+@@TIMESTAMP 1330
+Event                                Count   Total[ms]     Max[ms]     Min[ms]     Avg[ms]      T[%]
+@@TIMESTAMP 1330
+----------------------------------------------------------------------------------------------------
+@@TIMESTAMP 1330
+advance                                 20         193          13           9           9        15
+
+initialize                               1           6           6           6           6         0
+
+Properties from all Events, accumulated
+---------------------------------------
+

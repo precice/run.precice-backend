@@ -1,0 +1,1704 @@
+@@TIMESTAMP 0
+
+************************************************************
+
+CalculiX Version 2.10, Copyright(C) 1998-2015 Guido Dhondt
+CalculiX comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+certain conditions, see gpl.htm
+
+************************************************************
+
+You are using an executable made on Di 10. Mai 14:57:10 CEST 2016
+@@TIMESTAMP 5
+
+@@TIMESTAMP 5
+  The numbers below are estimated upper bounds
+@@TIMESTAMP 6
+
+@@TIMESTAMP 6
+  number of:
+@@TIMESTAMP 6
+
+@@TIMESTAMP 6
+   nodes:           68
+@@TIMESTAMP 6
+   elements:            5
+@@TIMESTAMP 6
+   one-dimensional elements:            0
+@@TIMESTAMP 6
+   two-dimensional elements:            0
+@@TIMESTAMP 6
+   integration points per element:           27
+@@TIMESTAMP 6
+   degrees of freedom per node:            3
+@@TIMESTAMP 6
+   layers per element:            1
+@@TIMESTAMP 6
+
+@@TIMESTAMP 6
+   distributed facial loads:            0
+@@TIMESTAMP 6
+   distributed volumetric loads:            0
+@@TIMESTAMP 6
+   concentrated loads:           58
+@@TIMESTAMP 6
+   single point constraints:           92
+@@TIMESTAMP 6
+   multiple point constraints:            1
+@@TIMESTAMP 7
+   terms in all multiple point constraints:            1
+@@TIMESTAMP 7
+   tie constraints:            0
+@@TIMESTAMP 7
+   dependent nodes tied by cyclic constraints:            0
+@@TIMESTAMP 7
+   dependent nodes in pre-tension constraints:            0
+@@TIMESTAMP 7
+
+@@TIMESTAMP 7
+   sets:            4
+@@TIMESTAMP 7
+   terms in all sets:          207
+@@TIMESTAMP 7
+
+@@TIMESTAMP 7
+   materials:            1
+@@TIMESTAMP 7
+   constants per material and temperature:            2
+   temperature points per material:            1
+   plastic data points per material:            0
+
+   orientations:            0
+   amplitudes:            3
+   data points in all amplitudes:            3
+   print requests:            0
+   transformations:            0
+   property cards:            0
+
+@@TIMESTAMP 8
+ *INFO reading *STEP: nonlinear geometric
+@@TIMESTAMP 9
+       effects are turned on
+@@TIMESTAMP 9
+
+@@TIMESTAMP 9
+
+@@TIMESTAMP 9
+ STEP            1
+@@TIMESTAMP 9
+
+@@TIMESTAMP 9
+ Dynamic analysis was selected
+@@TIMESTAMP 9
+
+@@TIMESTAMP 9
+ Newton-Raphson iterative procedure is active
+@@TIMESTAMP 9
+
+@@TIMESTAMP 9
+ Nonlinear geometric effects are taken into account
+@@TIMESTAMP 10
+
+@@TIMESTAMP 28
+ Decascading the MPC's
+
+ Determining the structure of the matrix:
+ number of equations
+ 120
+ number of nonzero lower triangular matrix elements
+ 2916
+
+Starting FSI analysis via preCICE using the geometrically non-linear CalculiX solver...
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Setting up preCICE participant Calculix, using config file: config.yml
+@@TIMESTAMP 129
+[2018-01-29 00:08:44.956829] [0x00007fd1b78527c0] [trace]   Entering configure
+  Argument 0: configurationFileName == ./precice-config.xml
+(0) 00:08:45 [impl::SolverInterfaceImpl]:176 in configure: [PRECICE] Run in coupling mode
+@@TIMESTAMP 260
+Read data 'Forces0' found.
+Write data 'DisplacementDeltas0' found.
+(0) 00:08:45 [impl::SolverInterfaceImpl]:250 in initialize: Setting up master communication to coupling partner/s 
+@@TIMESTAMP 276
+(0) 00:08:45 [impl::SolverInterfaceImpl]:267 in initialize: Coupling partner/s are connected 
+@@TIMESTAMP 277
+(0) 00:08:45 [precice::geometry::CommunicatedGeometry]:93 in sendMesh: Gather mesh Calculix_Mesh
+(0) 00:08:45 [precice::geometry::CommunicatedGeometry]:124 in sendMesh: Send global mesh Calculix_Mesh
+(0) 00:08:45 [impl::SolverInterfaceImpl]:306 in initialize: Setting up slaves communication to coupling partner/s 
+@@TIMESTAMP 278
+(0) 00:08:45 [impl::SolverInterfaceImpl]:322 in initialize: Slaves are connected
+@@TIMESTAMP 318
+(0) 00:08:45 [impl::SolverInterfaceImpl]:360 in initialize: it 1 of 1 | dt# 1 of 20 | t 0 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete no | 
+Initializing coupling data
+Adapter writing coupling data...
+(0) 00:08:45 [cplscheme::SerialCouplingScheme]:117 in initializeData: initializeData is skipped since no data has to be initialized
+Adapter reading coupling data...
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.002000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 321
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 1 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=0.000000e+00
+ actual step time=1.000000e-02
+ actual total time=1.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.137081
+ time avg. forc= 0.137081
+ largest residual force= 0.012931 in node 1 and dof 1
+ largest increment of disp= 4.212874e-04
+ largest correction to disp= 4.212874e-04
+
+@@TIMESTAMP 325
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.136713
+ time avg. forc= 0.136713
+ largest residual force= 0.000000 in node 9 and dof 1
+ largest increment of disp= 4.212874e-04
+ largest correction to disp= 9.268868e-07
+
+ convergence
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 405
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 2 of 20 | t 0.01 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 406
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 1.593695e-03
+ work performed by the damping forces = 0.000000e+00
+ netto work = 1.593695e-03
+
+ actual energy: 
+ internal energy = 8.091234e-04
+ kinetic energy = 8.168056e-04
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 1.625929e-03
+
+ energy increase = 1.625929e-03
+
+ energy balance (absolute) = 3.223420e-05 
+ energy balance (relative) = 2.022608 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.002000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 410
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 2 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.000000e-02
+ actual step time=2.000000e-02
+ actual total time=2.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.274454
+ time avg. forc= 0.205583
+ largest residual force= 0.025922 in node 10 and dof 1
+ largest increment of disp= 1.181013e-03
+ largest correction to disp= 4.173399e-04
+
+@@TIMESTAMP 413
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.273964
+ time avg. forc= 0.205338
+ largest residual force= 0.000000 in node 1 and dof 1
+ largest increment of disp= 1.181013e-03
+ largest correction to disp= 1.853417e-06
+
+@@TIMESTAMP 414
+ convergence; the increment size is increased to 1.500000e-02
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 466
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 3 of 20 | t 0.02 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 467
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 7.194479e-03
+ work performed by the damping forces = 0.000000e+00
+ netto work = 7.194479e-03
+
+ actual energy: 
+ internal energy = 4.633620e-03
+ kinetic energy = 2.413956e-03
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 7.047576e-03
+
+ energy increase = 7.047576e-03
+
+ energy balance (absolute) = -1.469027e-04 
+ energy balance (relative) = 2.041882 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.003000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 470
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 3 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=2.000000e-02
+ actual step time=3.000000e-02
+ actual total time=3.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.288651
+ time avg. forc= 0.233109
+ largest residual force= 0.016540 in node 12 and dof 1
+ largest increment of disp= 9.685857e-04
+ largest correction to disp= 2.331981e-04 in node 3 and dof 1
+
+@@TIMESTAMP 474
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.288747
+ time avg. forc= 0.233141
+ largest residual force= 0.000000 in node 12 and dof 1
+ largest increment of disp= 9.685857e-04
+ largest correction to disp= 4.071966e-07 in node 2 and dof 1
+
+ convergence; the increment size is increased to 2.250000e-02
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 516
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 4 of 20 | t 0.03 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 517
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 9.733457e-03
+ work performed by the damping forces = 0.000000e+00
+ netto work = 9.733457e-03
+
+ actual energy: 
+ internal energy = 6.019044e-03
+ kinetic energy = 3.538243e-03
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 9.557287e-03
+
+ energy increase = 9.557287e-03
+
+ energy balance (absolute) = -1.761697e-04 
+ energy balance (relative) = 1.809939 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.004500, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 520
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 4 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=3.000000e-02
+ actual step time=4.000000e-02
+ actual total time=4.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.297451
+ time avg. forc= 0.249218
+ largest residual force= 0.015709 in node 9 and dof 1
+ largest increment of disp= 5.803474e-04
+ largest correction to disp= 2.566176e-04 in node 2 and dof 1
+
+@@TIMESTAMP 524
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.297712
+ time avg. forc= 0.249284
+ largest residual force= 0.000000 in node 9 and dof 1
+ largest increment of disp= 5.803474e-04
+ largest correction to disp= 7.999537e-07 in node 2 and dof 1
+
+ convergence; the increment size is increased to 3.375000e-02
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 567
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 5 of 20 | t 0.04 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 568
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 1.107511e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 1.107511e-02
+
+ actual energy: 
+ internal energy = 4.798916e-03
+ kinetic energy = 6.063741e-03
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 1.086266e-02
+
+ energy increase = 1.086266e-02
+
+ energy balance (absolute) = -2.124565e-04 
+ energy balance (relative) = 1.918323 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.006750, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 571
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 5 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=4.000000e-02
+ actual step time=5.000000e-02
+ actual total time=5.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.267931
+ time avg. forc= 0.253013
+ largest residual force= 0.015104 in node 12 and dof 1
+ largest increment of disp= 6.992331e-04
+ largest correction to disp= 3.657855e-04 in node 2 and dof 1
+
+@@TIMESTAMP 576
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.267980
+ time avg. forc= 0.253023
+ largest residual force= 0.000000 in node 2 and dof 1
+ largest increment of disp= 6.992331e-04
+ largest correction to disp= 9.587043e-07 in node 2 and dof 1
+
+ convergence; the increment size is increased to 5.062500e-02
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 630
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 6 of 20 | t 0.05 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 631
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 1.296879e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 1.296879e-02
+
+ actual energy: 
+ internal energy = 4.801786e-03
+ kinetic energy = 7.906440e-03
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 1.270823e-02
+
+ energy increase = 1.270823e-02
+
+ energy balance (absolute) = -2.605598e-04 
+ energy balance (relative) = 2.009130 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.010125, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 634
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 6 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=5.000000e-02
+ actual step time=6.000000e-02
+ actual total time=6.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.280799
+ time avg. forc= 0.257652
+ largest residual force= 0.008541 in node 10 and dof 1
+ largest increment of disp= 7.502668e-04
+ largest correction to disp= 2.018857e-04
+
+@@TIMESTAMP 638
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.280878
+ time avg. forc= 0.257666
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 7.502668e-04
+ largest correction to disp= 2.849227e-07 in node 2 and dof 3
+
+ convergence; the increment size is increased to 7.593750e-02
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 717
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 7 of 20 | t 0.06 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 718
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 1.525833e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 1.525833e-02
+
+ actual energy: 
+ internal energy = 5.267647e-03
+ kinetic energy = 9.712619e-03
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 1.498027e-02
+
+ energy increase = 1.498027e-02
+
+ energy balance (absolute) = -2.780670e-04 
+ energy balance (relative) = 1.822394 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.015188, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 721
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 7 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=6.000000e-02
+ actual step time=7.000000e-02
+ actual total time=7.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.309166
+ time avg. forc= 0.265023
+ largest residual force= 0.004959 in node 10 and dof 1
+ largest increment of disp= 9.244634e-04
+ largest correction to disp= 1.323231e-04 in node 4 and dof 1
+
+@@TIMESTAMP 725
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.309141
+ time avg. forc= 0.265019
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 9.244634e-04
+ largest correction to disp= 1.363982e-07 in node 3 and dof 1
+
+ convergence; the increment size is increased to 1.139063e-01
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 787
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 8 of 20 | t 0.07 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 788
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 2.015863e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 2.015863e-02
+
+ actual energy: 
+ internal energy = 6.765905e-03
+ kinetic energy = 1.307169e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 1.983760e-02
+
+ energy increase = 1.983760e-02
+
+ energy balance (absolute) = -3.210338e-04 
+ energy balance (relative) = 1.592537 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.022781, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 791
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 8 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=7.000000e-02
+ actual step time=8.000000e-02
+ actual total time=8.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.420357
+ time avg. forc= 0.284437
+ largest residual force= 0.013481 in node 10 and dof 1
+ largest increment of disp= 1.161415e-03
+ largest correction to disp= 2.329447e-04
+
+@@TIMESTAMP 794
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.420225
+ time avg. forc= 0.284420
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 1.161415e-03
+ largest correction to disp= 4.387243e-07
+
+ convergence; the increment size is increased to 1.708594e-01
+
+Adapter writing coupling data...
+@@TIMESTAMP 795
+Adapter calling advance()...
+@@TIMESTAMP 838
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 9 of 20 | t 0.08 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 839
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 2.633010e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 2.633010e-02
+
+ actual energy: 
+ internal energy = 1.049855e-02
+ kinetic energy = 1.548383e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 2.598238e-02
+
+ energy increase = 2.598238e-02
+
+ energy balance (absolute) = -3.477167e-04 
+ energy balance (relative) = 1.320605 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.034172, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 842
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 9 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=8.000000e-02
+ actual step time=9.000000e-02
+ actual total time=9.000000e-02
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.486503
+ time avg. forc= 0.306874
+ largest residual force= 0.007980 in node 12 and dof 1
+ largest increment of disp= 9.741798e-04
+ largest correction to disp= 1.929586e-04 in node 3 and dof 1
+
+@@TIMESTAMP 846
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.486660
+ time avg. forc= 0.306891
+ largest residual force= 0.000000 in node 12 and dof 1
+ largest increment of disp= 9.741798e-04
+ largest correction to disp= 2.900768e-07 in node 3 and dof 1
+
+ convergence; the increment size is increased to 2.562891e-01
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 887
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 10 of 20 | t 0.09 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 888
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 3.052845e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 3.052845e-02
+
+ actual energy: 
+ internal energy = 1.134975e-02
+ kinetic energy = 1.880443e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 3.015418e-02
+
+ energy increase = 3.015418e-02
+
+ energy balance (absolute) = -3.742682e-04 
+ energy balance (relative) = 1.225965 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.051258, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 892
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 10 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=9.000000e-02
+ actual step time=1.000000e-01
+ actual total time=1.000000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.459549
+ time avg. forc= 0.322157
+ largest residual force= 0.005682 in node 10 and dof 1
+ largest increment of disp= 8.395564e-04
+ largest correction to disp= 1.210784e-04 in node 4 and dof 1
+
+@@TIMESTAMP 895
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.459549
+ time avg. forc= 0.322157
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 8.395564e-04
+ largest correction to disp= 1.415844e-07 in node 4 and dof 1
+
+ convergence; the increment size is increased to 3.844336e-01
+
+Adapter writing coupling data...
+@@TIMESTAMP 896
+Adapter calling advance()...
+@@TIMESTAMP 937
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 11 of 20 | t 0.1 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 938
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 3.354994e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 3.354994e-02
+
+ actual energy: 
+ internal energy = 1.024016e-02
+ kinetic energy = 2.289306e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 3.313321e-02
+
+ energy increase = 3.313321e-02
+
+ energy balance (absolute) = -4.167294e-04 
+ energy balance (relative) = 1.242117 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.076887, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 942
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 11 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.000000e-01
+ actual step time=1.100000e-01
+ actual total time=1.100000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.468800
+ time avg. forc= 0.335488
+ largest residual force= 0.011486 in node 12 and dof 1
+ largest increment of disp= 1.069607e-03
+ largest correction to disp= 2.549157e-04 in node 2 and dof 1
+
+@@TIMESTAMP 945
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.468960
+ time avg. forc= 0.335503
+ largest residual force= 0.000000 in node 9 and dof 1
+ largest increment of disp= 1.069607e-03
+ largest correction to disp= 3.483176e-07 in node 2 and dof 1
+
+ convergence; the increment size is increased to 5.766504e-01
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 987
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 12 of 20 | t 0.11 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 988
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 3.752348e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 3.752348e-02
+
+ actual energy: 
+ internal energy = 1.096729e-02
+ kinetic energy = 2.612410e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 3.709139e-02
+
+ energy increase = 3.709139e-02
+
+ energy balance (absolute) = -4.320952e-04 
+ energy balance (relative) = 1.151533 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.115330, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 991
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 12 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.100000e-01
+ actual step time=1.200000e-01
+ actual total time=1.200000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.500432
+ time avg. forc= 0.349247
+ largest residual force= 0.002863 in node 10 and dof 1
+ largest increment of disp= 9.453578e-04
+ largest correction to disp= 1.481838e-04 in node 4 and dof 1
+
+@@TIMESTAMP 995
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.500379
+ time avg. forc= 0.349242
+ largest residual force= 0.000000 in node 9 and dof 1
+ largest increment of disp= 9.453578e-04
+ largest correction to disp= 1.101351e-07 in node 4 and dof 1
+
+ convergence; the increment size is increased to 8.649756e-01
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1036
+(0) 00:08:45 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 13 of 20 | t 0.12 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1037
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 4.370228e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 4.370228e-02
+
+ actual energy: 
+ internal energy = 1.286556e-02
+ kinetic energy = 3.037319e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 4.323875e-02
+
+ energy increase = 4.323875e-02
+
+ energy balance (absolute) = -4.635310e-04 
+ energy balance (relative) = 1.060656 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.172995, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1040
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 13 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.200000e-01
+ actual step time=1.300000e-01
+ actual total time=1.300000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.560385
+ time avg. forc= 0.365484
+ largest residual force= 0.003801 in node 10 and dof 1
+ largest increment of disp= 1.270323e-03
+ largest correction to disp= 1.102018e-04 in node 10 and dof 1
+
+@@TIMESTAMP 1044
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.560438
+ time avg. forc= 0.365488
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 1.270323e-03
+ largest correction to disp= 8.217499e-08 in node 10 and dof 1
+
+ convergence; the increment size is increased to 1.297463e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1087
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 14 of 20 | t 0.13 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1088
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 5.151145e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 5.151145e-02
+
+ actual energy: 
+ internal energy = 1.639521e-02
+ kinetic energy = 3.462605e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 5.102126e-02
+
+ energy increase = 5.102126e-02
+
+ energy balance (absolute) = -4.901946e-04 
+ energy balance (relative) = 0.951623 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.259493, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1092
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 14 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.300000e-01
+ actual step time=1.400000e-01
+ actual total time=1.400000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.614521
+ time avg. forc= 0.383276
+ largest residual force= 0.009522 in node 10 and dof 1
+ largest increment of disp= 1.225344e-03
+ largest correction to disp= 2.198988e-04 in node 4 and dof 1
+
+@@TIMESTAMP 1095
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.614438
+ time avg. forc= 0.383270
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 1.225344e-03
+ largest correction to disp= 3.254906e-07 in node 4 and dof 1
+
+ convergence; the increment size is increased to 1.946195e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1139
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 15 of 20 | t 0.14 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1140
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 5.824622e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 5.824622e-02
+
+ actual energy: 
+ internal energy = 1.953961e-02
+ kinetic energy = 3.820018e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 5.773980e-02
+
+ energy increase = 5.773980e-02
+
+ energy balance (absolute) = -5.064225e-04 
+ energy balance (relative) = 0.869451 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.389239, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1143
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 15 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.400000e-01
+ actual step time=1.500000e-01
+ actual total time=1.500000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.610361
+ time avg. forc= 0.398410
+ largest residual force= 0.002088 in node 12 and dof 1
+ largest increment of disp= 1.032742e-03
+ largest correction to disp= 5.923933e-05 in node 10 and dof 1
+
+@@TIMESTAMP 1146
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.610358
+ time avg. forc= 0.398409
+ largest residual force= 0.000000 in node 12 and dof 1
+ largest increment of disp= 1.032742e-03
+ largest correction to disp= 4.042823e-08 in node 3 and dof 1
+
+ convergence; the increment size is increased to 2.919293e+00
+
+Adapter writing coupling data...
+@@TIMESTAMP 1147
+Adapter calling advance()...
+@@TIMESTAMP 1188
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 16 of 20 | t 0.15 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1189
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 6.296725e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 6.296725e-02
+
+ actual energy: 
+ internal energy = 2.012276e-02
+ kinetic energy = 4.230674e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 6.242950e-02
+
+ energy increase = 6.242950e-02
+
+ energy balance (absolute) = -5.377510e-04 
+ energy balance (relative) = 0.854017 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.583859, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1193
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 16 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.500000e-01
+ actual step time=1.600000e-01
+ actual total time=1.600000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.578172
+ time avg. forc= 0.409645
+ largest residual force= 0.003302 in node 12 and dof 1
+ largest increment of disp= 1.164745e-03
+ largest correction to disp= 1.198474e-04
+
+@@TIMESTAMP 1196
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.578107
+ time avg. forc= 0.409641
+ largest residual force= 0.000000 in node 11 and dof 1
+ largest increment of disp= 1.164745e-03
+ largest correction to disp= 7.246105e-08 in node 12 and dof 1
+
+ convergence; the increment size is increased to 4.378939e+00
+
+Adapter writing coupling data...
+@@TIMESTAMP 1197
+Adapter calling advance()...
+@@TIMESTAMP 1238
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 17 of 20 | t 0.16 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1239
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 6.747084e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 6.747084e-02
+
+ actual energy: 
+ internal energy = 2.083499e-02
+ kinetic energy = 4.608606e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 6.692105e-02
+
+ energy increase = 6.692105e-02
+
+ energy balance (absolute) = -5.497860e-04 
+ energy balance (relative) = 0.814850 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.875788, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1242
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 17 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.600000e-01
+ actual step time=1.700000e-01
+ actual total time=1.700000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.577843
+ time avg. forc= 0.419535
+ largest residual force= 0.005872 in node 12 and dof 1
+ largest increment of disp= 1.128173e-03
+ largest correction to disp= 1.826299e-04 in node 2 and dof 1
+
+@@TIMESTAMP 1246
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.577882
+ time avg. forc= 0.419537
+ largest residual force= 0.000000 in node 11 and dof 1
+ largest increment of disp= 1.128173e-03
+ largest correction to disp= 1.908395e-07 in node 2 and dof 1
+
+ convergence; the increment size is increased to 6.568408e+00
+
+ the increment size exceeds the remainder of the step and is decreased to 4.830000e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1297
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 18 of 20 | t 0.17 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1298
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 7.381697e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 7.381697e-02
+
+ actual energy: 
+ internal energy = 2.293781e-02
+ kinetic energy = 5.031371e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 7.325153e-02
+
+ energy increase = 7.325153e-02
+
+ energy balance (absolute) = -5.654397e-04 
+ energy balance (relative) = 0.766002 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.966000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1301
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 18 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.700000e-01
+ actual step time=1.800000e-01
+ actual total time=1.800000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.626626
+ time avg. forc= 0.431042
+ largest residual force= 0.001006 in node 12 and dof 1
+ largest increment of disp= 1.375477e-03
+ largest correction to disp= 8.355408e-05 in node 2 and dof 1
+
+@@TIMESTAMP 1305
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.626631
+ time avg. forc= 0.431042
+ largest residual force= 0.000000 in node 12 and dof 1
+ largest increment of disp= 1.375477e-03
+ largest correction to disp= 4.009938e-08 in node 2 and dof 1
+
+ convergence; the increment size is increased to 7.245000e+00
+
+ the increment size exceeds the remainder of the step and is decreased to 4.820000e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1368
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 19 of 20 | t 0.18 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1369
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 8.158463e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 8.158463e-02
+
+ actual energy: 
+ internal energy = 2.634756e-02
+ kinetic energy = 5.461433e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 8.096188e-02
+
+ energy increase = 8.096188e-02
+
+ energy balance (absolute) = -6.227501e-04 
+ energy balance (relative) = 0.763318 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.964000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1373
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 19 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.800000e-01
+ actual step time=1.900000e-01
+ actual total time=1.900000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.740383
+ time avg. forc= 0.447323
+ largest residual force= 0.001764 in node 10 and dof 1
+ largest increment of disp= 1.290499e-03
+ largest correction to disp= 9.434823e-05
+
+@@TIMESTAMP 1376
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.740377
+ time avg. forc= 0.447323
+ largest residual force= 0.000000 in node 10 and dof 1
+ largest increment of disp= 1.290499e-03
+ largest correction to disp= 6.019614e-08
+
+ convergence; the increment size is increased to 7.230000e+00
+
+ the increment size exceeds the remainder of the step and is decreased to 4.810000e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1444
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 20 of 20 | t 0.19 | dt 0.01 | max dt 0.01 | ongoing yes | dt complete yes | 
+@@TIMESTAMP 1446
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 8.850755e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 8.850755e-02
+
+ actual energy: 
+ internal energy = 3.029753e-02
+ kinetic energy = 5.761144e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 8.790897e-02
+
+ energy increase = 8.790897e-02
+
+ energy balance (absolute) = -5.985768e-04 
+ energy balance (relative) = 0.676300 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+Adjusting time step for transient step
+precice_dt dtheta = 0.002000, dtheta = 0.962000, solver_dt = 0.010000
+Adapter reading coupling data...
+@@TIMESTAMP 1449
+Initialization of the interface data structure worked fine.
+Checkpointing: Reached the FORCES switch-case.
+Checkpointing: BlockVectorData has been read successfully.
+Checkpointing: Node forces have been set successfully.
+ increment 20 attempt 1 
+ increment size= 1.000000e-02
+ sum of previous increments=1.900000e-01
+ actual step time=2.000000e-01
+ actual total time=2.000000e-01
+
+ iteration 1
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.773170
+ time avg. forc= 0.463615
+ largest residual force= 0.002813 in node 10 and dof 1
+ largest increment of disp= 1.072835e-03
+ largest correction to disp= 9.310261e-05
+
+@@TIMESTAMP 1453
+ no convergence
+
+ iteration 2
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+ average force= 0.773130
+ time avg. forc= 0.463613
+ largest residual force= 0.000000 in node 9 and dof 1
+ largest increment of disp= 1.072835e-03
+ largest correction to disp= 7.408400e-08
+
+ convergence; the increment size is increased to 7.215000e+00
+
+ the increment size exceeds the remainder of the step and is decreased to 4.800000e+00
+
+Adapter writing coupling data...
+Adapter calling advance()...
+@@TIMESTAMP 1454
+(0) 00:08:46 [impl::SolverInterfaceImpl]:483 in advance: it 1 of 1 | dt# 21 of 20 | t 0.2 | dt 0.01 | max dt 0.01 | ongoing no | dt complete yes | 
+@@TIMESTAMP 1464
+ initial energy (at start of step) = 0.000000e+00
+
+ since start of the step: 
+ external work = 9.451072e-02
+ work performed by the damping forces = 0.000000e+00
+ netto work = 9.451072e-02
+
+ actual energy: 
+ internal energy = 3.262853e-02
+ kinetic energy = 6.127112e-02
+ elastic contact energy = 0.000000e+00
+ energy lost due to friction = 0.000000e+00
+ total energy  = 9.389965e-02
+
+ energy increase = 9.389965e-02
+
+ energy balance (absolute) = -6.110697e-04 
+ energy balance (relative) = 0.646561 % 
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+
+ Job finished
+
