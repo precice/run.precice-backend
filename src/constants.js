@@ -4,12 +4,12 @@ module.exports = {
   TIMESTAMP_PREFIX: '@@TIMESTAMP ',
   TIMESTAMP_REGEX: /^([0-9]+)\n([\s\S]*)$/,
   CONSOLE_ID_MAPPING: {
-    'LEFT_CONSOLE': 'su2',
-    'RIGHT_CONSOLE': 'ccx',
+    'LEFT_CONSOLE': 'ccx',
+    'RIGHT_CONSOLE': 'su2',
   },
   CONSOLE_ID_INVERSE: {
-    'su2': 'LEFT_CONSOLE',
-    'ccx': 'RIGHT_CONSOLE',
+    'ccx': 'LEFT_CONSOLE',
+    'su2': 'RIGHT_CONSOLE',
   },
   PARTS: {
     1: '01explConvergence',
