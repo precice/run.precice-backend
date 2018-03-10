@@ -1,6 +1,6 @@
 module.exports = {
   COUPLING_SEPARATOR: 'Setting up master communication to coupling partner/s',
-  THRESOLD: 100,
+  THRESOLD: 350,
   TIMESTAMP_PREFIX: '@@TIMESTAMP ',
   TIMESTAMP_REGEX: /^([0-9]+)\n([\s\S]*)$/,
   CONSOLE_ID_MAPPING: {
