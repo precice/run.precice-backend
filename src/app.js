@@ -22,7 +22,17 @@ io.on('connection', function (socket) {
   socket.on('action', function (action) {
     switch (action.type) {
       case 'socket/exec_cmd':
-        execCmd(socket, action.consoleId, action.partNumber)
+        console.log("Executing the command");
+        execCmd(socket, action.consoleId, action.partNumber);
+        break;
+      case 'socket/pause_simulation':
+        console.log(`Pausing part ${action.partNumber}`);
+        pauseSimulation(socket, action.partNumber);
+        break;
+      case 'socket/resume_simulation':
+        console.log(`Resuming after stopping part ${storyCase}`);
+        const storyCase = PARTS[action.partNumber];
+        doAfter(socket, storyCase );
     }
 
 
@@ -52,12 +62,12 @@ function execCmd(socket, consoleId, partNumber) {
   }
   socket[cmd + 'Running'] = true;
 
-  // doBefore(socket, consoleId, '01explConvergence');
   doBefore(socket, consoleId, storyCase);
 
 
 }
 
+// parts to send before second second participant is connected
 function doBefore(socket, consoleId, storyCase) {
   const cmd = CONSOLE_ID_MAPPING[consoleId];
   const parsedDump = DUMPS[storyCase][cmd]['before'];
@@ -71,47 +81,47 @@ function doBefore(socket, consoleId, storyCase) {
       socket[cmd + 'Pulse'] = null;
       socket[cmd + 'Loaded'] = true;
       if (socket['su2Loaded'] && socket['ccxLoaded']) {
+        socket['afterCounter'] = 0;
         doAfter(socket, storyCase);
       }
     }
   }, THRESOLD);
 }
 
+
+function afterSendChunk(socket, parsedDumpSu2, parsedDumpCcx)
+{
+  const counter = socket['afterCounter']; 
+  const dump_length = Math.max(parsedDumpSu2.length, parsedDumpCcx.length);
+  if (parsedDumpSu2[counter] && parsedDumpCcx[counter]) {
+    send_output(socket, [CONSOLE_ID_INVERSE['su2'], CONSOLE_ID_INVERSE['ccx']], [parsedDumpSu2[counter], parsedDumpCcx[counter]]);
+
+  } else if (parsedDumpSu2[counter]) {
+    send_output(socket, CONSOLE_ID_INVERSE['su2'], parsedDumpSu2[counter]);
+  }
+  else if (parsedDumpCcx[counter]) {
+    send_output(socket, CONSOLE_ID_INVERSE['ccx'], parsedDumpCcx[counter]);
+  }
+  socket['afterCounter']++;
+  if (counter === parsedDumpSu2.length) {
+    exit(socket, CONSOLE_ID_INVERSE['su2']);
+  }
+  if (counter === parsedDumpCcx.length) {
+    exit(socket, CONSOLE_ID_INVERSE['ccx']);
+  }
+
+  if (counter >= dump_length) {
+    clearInterval(socket['afterPulse']);
+    resetSocket(socket);
+  }
+}
+
+// parts to send to both consoles, after both participants are connected
 function doAfter(socket, storyCase) {
   const parsedDumpSu2 = DUMPS[storyCase]['su2']['after'];
   const parsedDumpCcx = DUMPS[storyCase]['ccx']['after'];
-  let counter = 0;
-  const dump_length = Math.max(parsedDumpSu2.length, parsedDumpCcx.length);
-  socket['afterPulse'] = setInterval(() => {
-
-    if (parsedDumpSu2[counter] && parsedDumpCcx[counter]) {
-      send_output(socket, [CONSOLE_ID_INVERSE['su2'], CONSOLE_ID_INVERSE['ccx']], [parsedDumpSu2[counter], parsedDumpCcx[counter]]);
-
-    } else if (parsedDumpSu2[counter]) {
-      send_output(socket, CONSOLE_ID_INVERSE['su2'], parsedDumpSu2[counter]);
-    }
-    else if (parsedDumpCcx[counter]) {
-      send_output(socket, CONSOLE_ID_INVERSE['ccx'], parsedDumpCcx[counter]);
-    }
-    counter++;
-    if (counter === parsedDumpSu2.length) {
-      exit(socket, CONSOLE_ID_INVERSE['su2']);
-    }
-    if (counter === parsedDumpCcx.length) {
-      exit(socket, CONSOLE_ID_INVERSE['ccx']);
-    }
-
-    if (counter >= dump_length) {
-      clearInterval(socket['afterPulse']);
-      resetSocket(socket);
-    }
-  }, THRESOLD);
+  socket['afterPulse'] = setInterval( () => { afterSendChunk( socket, parsedDumpSu2, parsedDumpCcx); }, THRESOLD);
 }
-
-
-CMD_DUMPS = {};
-
-CHUNK_SIZE = 100;
 
 
 function resetSocket(socket) {
@@ -125,4 +135,10 @@ function resetSocket(socket) {
   socket.su2Loaded = false;
   socket.ccxRunning = false;
   socket.su2Running = false;
+}
+
+function pauseSimulation(socket, storyCase)
+{
+  clearInterval(socket['afterPulse']);
+  socket['afterPulse'] = null;
 }
