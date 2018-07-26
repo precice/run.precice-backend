@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
         pauseSimulation(socket, action.partNumber);
         break;
       case 'socket/resume_simulation':
-        console.log(`Resuming after stopping part ${storyCase}`);
+        console.log(`Resuming after stopping part ${action.partNumber}`);
         const storyCase = PARTS[action.partNumber];
         doAfter(socket, storyCase );
     }
