@@ -32,7 +32,17 @@ io.on('connection', function (socket) {
       case 'socket/resume_simulation':
         console.log(`Resuming after stopping part ${action.partNumber}`);
         const storyCase = PARTS[action.partNumber];
-        doAfter(socket, storyCase );
+        if (socket['afterPulse'] === null)  {
+          doAfter(socket, storyCase );
+        }
+        else
+          console.log("Attemps to resume non-stopped simulation");
+        break;
+      case 'socket/abort_simulation':
+        console.log("Aborting simulation");
+        resetSocket(socket);
+        exit(socket, CONSOLE_ID_INVERSE['su2'], 1 );
+        exit(socket, CONSOLE_ID_INVERSE['ccx'], 1);
     }
 
 
@@ -91,7 +101,8 @@ function doBefore(socket, consoleId, storyCase) {
 
 function afterSendChunk(socket, parsedDumpSu2, parsedDumpCcx)
 {
-  const counter = socket['afterCounter']; 
+  const counter = socket['afterCounter'];
+  console.log(`Sending chunk ${counter}`);
   const dump_length = Math.max(parsedDumpSu2.length, parsedDumpCcx.length);
   if (parsedDumpSu2[counter] && parsedDumpCcx[counter]) {
     send_output(socket, [CONSOLE_ID_INVERSE['su2'], CONSOLE_ID_INVERSE['ccx']], [parsedDumpSu2[counter], parsedDumpCcx[counter]]);
