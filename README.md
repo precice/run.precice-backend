@@ -4,7 +4,7 @@ Backed-end of the web-based preCICE tutorial
 
 ## Development 
 ```bash
-git clone https://github.com/precice/run.precice-backend
+git clone https://github.com/precice/run.precice-backend && cd run.precice-backend
 npm install
 npm run start
 ```
